@@ -1,6 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import HomePage
 
 # Create your views here.
+
 def home(request):
-    return render(request, "index.html")
+    home_page = HomePage.objects.all().order_by('-updated_on').first()
+    return render(
+        request,
+        "bookings/index.html",
+        {"home_page": home_page},
+    )

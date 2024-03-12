@@ -20,6 +20,7 @@ from bookings.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("bookings.urls"))
-#   path('bookings/', my_bookings, name='bookings'),
+    path('summernote/', include('django_summernote.urls')),
+    path("", include("bookings.urls")),
+    
 ]

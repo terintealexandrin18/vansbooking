@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p> Thi is a paragraph </p>
+
+<h2>{{ home_page.title }}</h2>
+      <!-- Content goes directly underneath this -->
+{{ home_page.content | safe }}
+<!-- Updated on field goes in here -->
+
+<p class="text-end"><em>Updated on: {{ home_page.updated_on }}</em></p>
+
+{% endblock content %}
