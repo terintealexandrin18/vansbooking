@@ -1,13 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p> Thi is a paragraph </p>
+    <p>This is a paragraph</p>
 
-<h2>{{ home_page.title }}</h2>
-      <!-- Content goes directly underneath this -->
-{{ home_page.content | safe }}
-<!-- Updated on field goes in here -->
+    <h2>{{ home_page.title }}</h2>
+    {{ home_page.content | safe }}
 
-<p class="text-end"><em>Updated on: {{ home_page.updated_on }}</em></p>
+    <div class="row">
+        {% for image in home_page.image_set.all %}
+            <div class="col-md-4">
+                <img src="{{ image.image.url }}" alt="Image" class="img-fluid">
+            </div>
+        {% endfor %}
+    </div>
 
+    <p class="text-end"><em>Updated on: {{ home_page.updated_on }}</em></p>
 {% endblock content %}
+
+{% block footerimage %}
+    <div class="image-footer">
+    </div>
+{% endblock footerimage %}

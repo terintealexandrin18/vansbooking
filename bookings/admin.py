@@ -1,5 +1,5 @@
 from django.contrib import admin
-from  .models import HomePage
+from  .models import HomePage, Image
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -8,6 +8,7 @@ from django_summernote.admin import SummernoteModelAdmin
 class HomePageAdmin(SummernoteModelAdmin):
     summernote_fields = ('content')
 
+admin.site.register(Image)
 
 
 #admin.site.register(HomePage)

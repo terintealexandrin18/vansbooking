@@ -1,7 +1,21 @@
+ /* Index Page edit image*/
+ .img-fluid {
+    max-width: 92%;
+    height: 92%;
+    border-radius: 125px;
+ }
+
+
+
+ /* Footer */
 .image-footer {
     background-image: url('/static/images/logistic.jpg');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
     height:300px; 
+    }
+
+    .backgroundfooter {
+        background-color: #BEA6A0;
     }
