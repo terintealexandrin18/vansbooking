@@ -49,7 +49,12 @@
     color: #B0A8B9;
   }
 
- /* Unorder List */
+ /* List */
  ul {
     list-style-type: none;
   }
+ .listtitle {
+    text-align:center;
+    font-weight: 700;
+
+ }
