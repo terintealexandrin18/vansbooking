@@ -1,21 +1,55 @@
  /* Index Page edit image*/
  .img-fluid {
-    max-width: 92%;
-    height: 92%;
-    border-radius: 125px;
+     max-width: 92%;
+     height: 92%;
+     border-radius: 125px;
  }
 
 
 
  /* Footer */
-.image-footer {
-    background-image: url('/static/images/logistic.jpg');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat;
-    height:300px; 
-    }
+ .image-footer {
+     background-image: url('/static/images/logistic.jpg');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     height: 300px;
+ }
+ .social-icons {
+    margin: 10px;
+    font-size: 1.2em;
+ }
 
-    .backgroundfooter {
-        background-color: #BEA6A0;
-    }
+ .socialmedia {
+     font-size: 1.5em;
+     text-align: center;
+ }
+
+ .opening {
+    text-align: center;
+ }
+
+ .backgroundfooter {
+     background-color: #BEA6A0;
+ }
+
+ .social-icon:hover {
+    color: #B0A8B9;
+  }
+ /* Nav Bar */
+ .navbardesign {
+     background-color: #C34A36;
+ }
+
+ .navbardesign a {
+     color: black;
+ }
+ 
+ .navbar-nav .nav-link:hover {
+    color: #B0A8B9;
+  }
+
+ /* Unorder List */
+ ul {
+    list-style-type: none;
+  }
