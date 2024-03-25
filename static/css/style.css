@@ -5,8 +5,11 @@
      border-radius: 125px;
  }
 
-
-
+/* banner*/
+.banner {
+    background-color: #B0A8B9;
+    text-align: center;
+}
  /* Footer */
 
  body, footer {

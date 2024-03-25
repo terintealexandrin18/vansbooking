@@ -62,7 +62,7 @@
               <!-- Modify dropdown menu for Django Allauth -->
               {% if user.is_authenticated %}
               <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
-              <li><a class="dropdown-item" href="{% url 'account_change_password' %}">Change Password</a></li>
+              
               {% else %}
               <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
               <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
@@ -83,6 +83,18 @@
   </nav>
 </div>
 <!-- End Nav Bar -->
+<div class="container">
+  <div class="row">
+      <div class="col-md-6 offset-md-3">
+          {% for message in messages %}
+          <div class="banner alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+              {{ message | safe }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %}
+      </div>
+  </div>
+</div>
 
   <div class="content">
     {% block content %}
@@ -91,7 +103,7 @@
   </div>
 
   <!-- Footer -->
-  <footer>
+  <footer class="mt-auto">
     <div class="container-fluid navbardesign">
       <div class="row">
       <div class="col-12">
