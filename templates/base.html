@@ -1,7 +1,9 @@
 {% load static %}
 
 {% url 'home' as home_url %}
+
 {% url 'account_login' as login_url %}
+{% url 'make_booking' as make_booking_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
 
@@ -46,7 +48,7 @@
             <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Make a Booking</a>
+            <a class="nav-link" href="{{ make_booking_url }}">Make a Booking</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">View my Booking</a>
