@@ -10,3 +10,8 @@ def home(request):
         "bookings/index.html",
         {"home_pages": home_pages},
     )
+
+def make_booking(request):
+
+
+    return render(request, 'bookings/make_booking.html')
