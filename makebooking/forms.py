@@ -4,7 +4,7 @@ from .models import BookingRequest
 class BookingForm(forms.ModelForm):
     class Meta:
         model = BookingRequest 
-        fields = ['contact_number', 'days_of_week', 'time_slot', 'services', 'comments']
+        fields = ['contact_number', 'days_of_week', 'time_slot', 'choose_a_services', 'comments']
 
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user', None)
