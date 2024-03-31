@@ -36,4 +36,3 @@ class BookingRequest(models.Model):
     time_slot = models.CharField(max_length=100, choices=TIME_CHOICES)
     choose_a_services = models.CharField(max_length=100, choices=SERVICE_CHOICES)
     comments = models.TextField()
-    uk_postcodes = models.CharField(max_length=100, blank=True, null=True)
