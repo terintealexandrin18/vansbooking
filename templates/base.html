@@ -48,7 +48,7 @@
             <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ make_booking_url }}">Make a Booking</a>
+            <a class="nav-link" href="{% url 'make_the_bookings' %}">Make a Booking</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">View my Booking</a>

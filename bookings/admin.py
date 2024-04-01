@@ -11,4 +11,3 @@ class HomePageAdmin(SummernoteModelAdmin):
 admin.site.register(Image)
 
 
-#admin.site.register(HomePage)
