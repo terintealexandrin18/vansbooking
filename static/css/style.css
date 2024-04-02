@@ -72,3 +72,9 @@
     font-weight: 700;
 
  }
+/* view page */
+ .viewbooking {
+    border: 1px solid #a71d1d;
+    padding: 10px; 
+    margin-bottom: 10px;
+ }

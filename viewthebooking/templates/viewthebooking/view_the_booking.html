@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>Your Bookings</h1>
+
+<ul>
+    {% for booking in bookings %}
+    <div class="viewbooking">
+        <li>
+            Service: {{ booking.choose_a_services }}<br>
+            Time: {{ booking.time_slot }}<br>
+            Date: {{ booking.date }}<br>
+            Status:
+            {% if booking.status == 'pending' %}
+            In Progress. Waiting for approval.
+            {% elif booking.status == 'approved' %}
+            Booking confirmed.
+            {% endif %}
+        </li>
+
+        {% endfor %}
+    </div>
+</ul>
+
+
+{% endblock content %}

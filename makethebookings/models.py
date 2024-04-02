@@ -35,4 +35,3 @@ class BookingRequest(models.Model):
     comments = models.TextField(max_length=250)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
     created_at = models.DateTimeField(auto_now_add=True, null=True)
-

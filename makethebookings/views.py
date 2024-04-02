@@ -9,6 +9,7 @@ def make_booking(request):
     if request.method == "POST":
         booking_form = BookingForm(data=request.POST)
         if booking_form.is_valid():
+            booking_form.instance.user = request.user
             booking_form.save()
             messages.success(
                 request,
