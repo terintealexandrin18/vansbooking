@@ -72,9 +72,20 @@
     font-weight: 700;
 
  }
-/* view page */
+/* view booking page */
+
  .viewbooking {
-    border: 1px solid #a71d1d;
-    padding: 10px; 
-    margin-bottom: 10px;
- }
+    margin-bottom: 20px;
+}
+
+.card {
+    border: 1px solid #C34A36;
+}
+
+.status-pending {
+    background-color: rgba(255, 165, 0, 0.5);
+}
+
+.status-approved {
+    background-color: rgba(0, 128, 0, 0.5);
+}

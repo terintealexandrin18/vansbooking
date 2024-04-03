@@ -1,28 +1,36 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block content %}
 
-<h1>Your Bookings</h1>
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h3>Your Bookings</h3>
+            <h5>Please find below your booking requests. Kindly check their current status.</h5>
+            {% for booking in bookings %}
+            <div class="viewbooking">
+                <div class="card mb-3 ">
+                    <div class="card-body">
+                        <h5 class="card-title">Service: {{ booking.choose_a_services }}</h5>
+                        <p class="card-text">Time: {{ booking.time_slot }}</p>
+                        <p class="card-text">Date: {{ booking.date }}</p>
+                        <p class="card-text">
+                            Status:
+                            <span class="{% if booking.status == 'pending' %}status-pending{% elif booking.status == 'approved' %}status-approved{% endif %}">
+                                {% if booking.status == 'pending' %}
+                                    In Progress. Waiting for approval.
+                                {% elif booking.status == 'approved' %}
+                                    Booking confirmed.
+                                {% endif %}
+                            </span>
+                        </p>
 
-<ul>
-    {% for booking in bookings %}
-    <div class="viewbooking">
-        <li>
-            Service: {{ booking.choose_a_services }}<br>
-            Time: {{ booking.time_slot }}<br>
-            Date: {{ booking.date }}<br>
-            Status:
-            {% if booking.status == 'pending' %}
-            In Progress. Waiting for approval.
-            {% elif booking.status == 'approved' %}
-            Booking confirmed.
-            {% endif %}
-        </li>
-
-        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-</ul>
-
-
+</div>
 {% endblock content %}
