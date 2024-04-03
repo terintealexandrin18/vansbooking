@@ -17,15 +17,19 @@
                         <p class="card-text">Date: {{ booking.date }}</p>
                         <p class="card-text">
                             Status:
-                            <span class="{% if booking.status == 'pending' %}status-pending{% elif booking.status == 'approved' %}status-approved{% endif %}">
+                            <span
+                                class="{% if booking.status == 'pending' %}status-pending{% elif booking.status == 'approved' %}status-approved{% endif %}">
                                 {% if booking.status == 'pending' %}
-                                    In Progress. Waiting for approval.
+                                In Progress. Waiting for approval.
                                 {% elif booking.status == 'approved' %}
-                                    Booking confirmed.
+                                Booking confirmed.
                                 {% endif %}
                             </span>
                         </p>
-
+                        {% if user.is_authenticated and booking.user == user %}
+                        <button class="btn btn-edit" data-booking-id="{{ booking.id }}">Edit Booking</button>
+                        <button class="btn btn-delete" data-booking-id="{{ booking.id }}">Delete Booking</button>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -33,4 +37,6 @@
         </div>
     </div>
 </div>
+<script src="{% static 'js/update.js' %}"></script>
+
 {% endblock content %}

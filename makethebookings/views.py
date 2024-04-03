@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, reverse
 from django.contrib import messages
+from django.http import HttpResponseRedirect
+from .models import BookingRequest
 
 from django.contrib.auth.decorators import login_required
 from .forms import BookingForm
@@ -25,3 +27,47 @@ def make_booking(request):
         "makethebookings/make_the_bookings.html",
         {"booking_form": booking_form},
     )
+
+
+def booking_edit(request, booking_id):
+    """
+    Display an individual booking request for edit.
+
+    **Context**
+
+    ``booking``
+        An instance of :model:`makethebookings.BookingRequest`.
+    ``booking_form``
+        An instance of :form:`makethebookings.BookingForm`
+    """
+    if request.method == "POST":
+        booking = get_object_or_404(BookingRequest, pk=booking_id)
+        booking_form = BookingForm(data=request.POST, instance=booking)
+
+        if booking_form.is_valid() and booking.user == request.user:
+            booking = booking_form.save(commit=False)
+            booking.save()
+            messages.add_message(request, messages.SUCCESS, 'Booking Updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating booking!')
+
+    return HttpResponseRedirect(reverse('view-the-booking'))
+
+def booking_delete(request, booking_id):
+    """
+    Delete an individual booking request.
+
+    **Context**
+
+    ``booking``
+        An instance of :model:`makethebookings.BookingRequest`.
+    """
+    booking = get_object_or_404(BookingRequest, pk=booking_id)
+
+    if booking.user == request.user:
+        booking.delete()
+        messages.add_message(request, messages.SUCCESS, 'Booking deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own bookings!')
+
+    return HttpResponseRedirect(reverse('view-the-booking'))
