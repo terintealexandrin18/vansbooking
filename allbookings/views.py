@@ -24,7 +24,7 @@ def make_booking(request):
 
     return render(
         request,
-        "makethebookings/make_the_bookings.html",
+        "allbookings/make_the_bookings.html",
         {"booking_form": booking_form},
     )
 
@@ -36,9 +36,9 @@ def booking_edit(request, booking_id):
     **Context**
 
     ``booking``
-        An instance of :model:`makethebookings.BookingRequest`.
+        An instance of :model:`allbookings.BookingRequest`.
     ``booking_form``
-        An instance of :form:`makethebookings.BookingForm`
+        An instance of :form:`allbookings.BookingForm`
     """
     if request.method == "POST":
         booking = get_object_or_404(BookingRequest, pk=booking_id)
@@ -60,7 +60,7 @@ def booking_delete(request, booking_id):
     **Context**
 
     ``booking``
-        An instance of :model:`makethebookings.BookingRequest`.
+        An instance of :model:`allbookings.BookingRequest`.
     """
     booking = get_object_or_404(BookingRequest, pk=booking_id)
 

@@ -17,14 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from bookings.views import home
-from makethebookings.views import make_booking
+from allbookings.views import make_booking
 
 urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path("", include("bookings.urls")),
-    path('makethebookings/', include("makethebookings.urls")),
+    path('makethebookings/', include("allbookings.urls")),
     path('viewthebooking/', include("viewthebooking.urls")),
     
 

@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from makethebookings.models import BookingRequest
+from allbookings.models import BookingRequest
 
-# Create your views here.
+# Create your views here. 
 
 @login_required
 def view_booking(request):
