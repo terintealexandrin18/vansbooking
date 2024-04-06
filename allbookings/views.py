@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.contrib import messages
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from .models import BookingRequest
 
 from django.contrib.auth.decorators import login_required
@@ -40,10 +40,10 @@ def booking_edit(request, booking_id):
     ``booking_form``
         An instance of :form:`allbookings.BookingForm`
     """
+    booking = get_object_or_404(BookingRequest, pk=booking_id)
+    booking_form = BookingForm(request.POST or None, instance=booking)
     if request.method == "POST":
-        booking = get_object_or_404(BookingRequest, pk=booking_id)
-        booking_form = BookingForm(data=request.POST, instance=booking)
-
+    
         if booking_form.is_valid() and booking.user == request.user:
             booking = booking_form.save(commit=False)
             booking.save()
@@ -51,7 +51,11 @@ def booking_edit(request, booking_id):
         else:
             messages.add_message(request, messages.ERROR, 'Error updating booking!')
 
-    return HttpResponseRedirect(reverse('view-the-booking'))
+    return render(
+        request,
+        "allbookings/edit_the_bookings.html",
+        {"booking_form": booking_form},
+    )
 
 def booking_delete(request, booking_id):
     """
@@ -70,4 +74,4 @@ def booking_delete(request, booking_id):
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own bookings!')
 
-    return HttpResponseRedirect(reverse('view-the-booking'))
+    return HttpResponse("ok")

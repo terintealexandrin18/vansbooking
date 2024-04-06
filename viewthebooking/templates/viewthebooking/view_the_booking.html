@@ -27,8 +27,9 @@
                             </span>
                         </p>
                         {% if user.is_authenticated and booking.user == user %}
-                        <button class="btn btn-edit" data-booking-id="{{ booking.id }}">Edit Booking</button>
-                        <button class="btn btn-delete" data-booking-id="{{ booking.id }}">Delete Booking</button>
+                        <button class="btn btn-edit" data-booking-id="{% url 'edit-booking' booking.id %}">Edit Booking</button>
+                        <button class="btn btn-delete" data-booking-id="{% url 'delete-booking' booking.id %}">Delete Booking</button>
+                        
                         {% endif %}
                     </div>
                 </div>

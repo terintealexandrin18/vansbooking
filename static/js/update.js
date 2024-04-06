@@ -5,19 +5,24 @@ document.addEventListener("DOMContentLoaded", function() {
     // Edit booking functionality
     editButtons.forEach(button => {
         button.addEventListener("click", function() {
-            let bookingId = button.getAttribute("data-booking-id");
+            let bookingURL = button.getAttribute("data-booking-id");
             // Redirect to the edit page for the booking ID
-            window.location.href = `/edit_booking/${bookingId}`;
+            window.location.href = location.origin + bookingURL;
         });
     });
 
     // Delete booking functionality
     deleteButtons.forEach(button => {
         button.addEventListener("click", function() {
-            let bookingId = button.getAttribute("data-booking-id");
+            let bookingURL = button.getAttribute("data-booking-id");
             // Send an AJAX request to delete the booking
-            fetch(`/delete_booking/${bookingId}`, {
-                method: 'DELETE'
+            
+            let url = location.origin + bookingURL;
+            console.log(url);
+            console.log("URL : ")
+
+            fetch(url, {
+                method: 'GET'
             })
             .then(response => {
                 if (response.ok) {
