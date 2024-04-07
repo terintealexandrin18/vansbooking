@@ -77,9 +77,13 @@
  .viewbooking {
     margin-bottom: 20px;
 }
+.yourbooking {
+    margin-top: 1em;
+}
 
 .card {
     border: 1px solid #C34A36;
+    background-color: #d8d7c7;
 }
 
 .status-pending {
@@ -97,16 +101,47 @@
 }
 
 /* Buttons*/
-
-.lgbutton{
-    background-color: #768581;
+.btn {
     border-radius: 10px;
     color: #d8d7c7;
+}
+
+.lgbutton{
+    background-color: #768581; 
 }
 
 .dgbutton{
     background-color: #4c514e;
-    border-radius: 10px;
-    color: #d8d7c7;
-
 }
+
+
+/* Form css*/
+/* Style for form container */
+.form-container {
+    margin-top: 1em; 
+    margin-bottom: 1em;   
+    background-color: #d8d7c7;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #C34A36;
+}
+
+/* Style for form labels */
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Style for form inputs */
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+

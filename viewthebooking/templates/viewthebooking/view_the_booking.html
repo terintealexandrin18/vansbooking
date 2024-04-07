@@ -5,7 +5,7 @@
 {% load static %}
 <div class="container">
     <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-6 offset-md-3 yourbooking">
             <h3>Your Bookings</h3>
             <h5>Please find below your booking requests. Kindly check their current status.</h5>
             {% for booking in bookings %}
@@ -27,8 +27,8 @@
                             </span>
                         </p>
                         {% if user.is_authenticated and booking.user == user %}
-                        <button class="btn btn-edit" data-booking-id="{% url 'edit-booking' booking.id %}">Edit Booking</button>
-                        <button class="btn btn-delete" data-booking-id="{% url 'delete-booking' booking.id %}">Delete Booking</button>
+                        <button class="btn btn-edit dgbutton" data-booking-id="{% url 'edit-booking' booking.id %}">Edit Booking</button>
+                        <button class="btn btn-delete lgbutton" data-booking-id="{% url 'delete-booking' booking.id %}">Delete Booking</button>
                         
                         {% endif %}
                     </div>
