@@ -11,14 +11,20 @@ def make_booking(request):
     if request.method == "POST":
         booking_form = BookingForm(data=request.POST)
         if booking_form.is_valid():
-            booking_form.instance.user = request.user
-            booking_form.save()
-            messages.success(
-                request,
-                'Your booking request has been submitted successfully!'
-            )
-            return HttpResponseRedirect(reverse('view-the-booking'))
-
+            # Check if the user already has a booking for the same date and time slot
+            existing_booking = BookingRequest.objects.filter(user=request.user, date=booking_form.cleaned_data['date'], time_slot=booking_form.cleaned_data['time_slot']).exists()
+            if existing_booking:
+                # Pass the error message to the form context
+                booking_form.add_error(None, 'Sorry, but the time slot you selected is no longer available. Please choose a different time slot that suits your schedule.')
+            else:
+                # Proceed with creating the new booking
+                booking_form.instance.user = request.user
+                booking_form.save()
+                messages.success(
+                    request,
+                    'Your booking request has been submitted successfully!'
+                )
+                return HttpResponseRedirect(reverse('view-the-booking'))
     else:
         booking_form = BookingForm()
 
@@ -28,7 +34,7 @@ def make_booking(request):
         {"booking_form": booking_form},
     )
 
-
+@login_required
 def booking_edit(request, booking_id):
     """
     Display an individual booking request for edit.
@@ -45,12 +51,18 @@ def booking_edit(request, booking_id):
     
     if request.method == "POST":
         if booking_form.is_valid() and booking.user == request.user:
-            updated_booking = booking_form.save(commit=False)
-            if updated_booking.status == 'approved':
-                updated_booking.status = 'pending'
-            updated_booking.save()
-            messages.success(request, 'Booking Updated!')
-            return HttpResponseRedirect(reverse('view-the-booking'))
+            # Check if the user already has a booking for the same date and time slot
+            existing_booking = BookingRequest.objects.filter(user=request.user, date=booking_form.cleaned_data['date'], time_slot=booking_form.cleaned_data['time_slot']).exclude(id=booking_id).exists()
+            if existing_booking:
+                # Pass the error message to the form context
+                booking_form.add_error(None, 'Sorry, but the time slot you selected is no longer available. Please choose a different time slot that suits your schedule.')
+            else:
+                updated_booking = booking_form.save(commit=False)
+                if updated_booking.status == 'approved':
+                    updated_booking.status = 'pending'
+                updated_booking.save()
+                messages.success(request, 'Booking Updated!')
+                return HttpResponseRedirect(reverse('view-the-booking'))
         else:
             messages.error(request, 'Error updating booking!')
 
