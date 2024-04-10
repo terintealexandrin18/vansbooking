@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container yourbooking">
+    <div class="row">
+
+        <div class="col-md-6 offset-md-3">
+            <h3>Contact Us</h3>
+            <h5>Feel free to contact us through the options below: fill out the form, send us an email, give us a call, or drop by our office. We'd be more than happy to assist you in any way we can.</h5>
+            <div class="form-container">
+                <form method="post">
+                    {% csrf_token %}
+
+                    <!-- Display error message if it exists -->
+                    {% if form.errors %}
+                    <div class="alert alert-danger">
+                        Please correct the errors below.
+                    </div>
+                    {% endif %}
+
+                    <!-- First Name -->
+                    <div class="form-group">
+                        <label for="id_first_name">First Name:</label>
+                        {{ form.first_name }}
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="form-group">
+                        <label for="id_last_name">Last Name:</label>
+                        {{ form.last_name }}
+                    </div>
+
+                    <!-- Contact Number -->
+                    <div class="form-group">
+                        <label for="id_contact_number">Contact Number:</label>
+                        {{ form.contact_number }}
+                    </div>
+
+                    <!-- Email Address -->
+                    <div class="form-group">
+                        <label for="id_email">Email Address:</label>
+                        {{ form.email }}
+                    </div>
+
+                    <!-- Your Message -->
+                    <div class="form-group">
+                        <label for="id_message">Your Message:</label>
+                        {{ form.message }}
+                    </div>
+
+                    <button type="submit" class="btn lgbutton">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,66 +1,71 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container">
-        {% for home_page in home_pages %}
-            <div class="post">
-                <h2>{{ home_page.title }}</h2><hr>
-                <p>{{ home_page.content | safe }}</p>
-                <h3>Services Provided</h3>
-<hr>
-<div class="row">
-    <div class="col-md-4">
-        <ul class="list-unstyled text-center"> <!-- Change list-inline to list-unstyled -->
-            <li><i class="fa-solid fa-recycle fa-2xl" style="color: #c34a36;"></i></li>
-            <li class="listtitle">Waste Collection:</li>
-            <li>Non-hazardous waste collection</li>
-            <li>Hazardous waste collection</li>
-        </ul>
-    </div>
-    <div class="col-md-4">
-        <ul class="list-unstyled text-center"> <!-- Change list-inline to list-unstyled -->
-            <li><i class="fa-solid fa-right-left fa-2xl" style="color: #c34a36;"></i></li>
-            <li class="listtitle">Site-to-Site Transfer:</li>
-            <li>Seamless transportation between two addresses</li>
-        </ul>
-    </div>
-    <div class="col-md-4">
-        <ul class="list-unstyled text-center"> <!-- Change list-inline to list-unstyled -->
-            <li><i class="fa-solid fa-van-shuttle fa-2xl" style="color: #c34a36;"></i></li>
-            <li class="listtitle">Van and Driver Hire:</li>
-            <li>Flexible van rental with an experienced driver at your service</li>
-        </ul>
-    </div>
-    <div class="col-md-12 text-center">
-        <ul class="list-unstyled">
-            <li><i class="fa-solid fa-circle-question fa-2xl" style="color: #c34a36;"></i></li>
-            <li class="listtitle">Additional Services:</li>
-            <li>Tailored transportation solutions to meet your specific requirements. Contact us to discuss further options and customization.</li>
-        </ul>
-    </div>
-    <div class="col-md-12 text-center">
-        <p class="list-unstyled">
-            Book one of the services or Contact Us!
-        </p>
-    </div>
-</div>
-                <hr>
-                <h3>List of the Vans</h3>
-                <div class="row">
-                    {% for image in home_page.image_set.all %}
-                        <div class="col-md-4">
-                            <img src="{{ image.image.url }}" alt="Image" class="img-fluid">
-                        </div>
-                    {% endfor %}
-                </div>
-                <p class="text-end"><em>Updated on: {{ home_page.updated_on }}</em></p>
+<div class="container yourbooking">
+    {% for home_page in home_pages %}
+    <div class="post">
+        <h2>{{ home_page.title }}</h2>
+        <hr>
+        <p>{{ home_page.content | safe }}</p>
+        <h3>Services Provided</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <ul class="list-unstyled text-center">
+                    <!-- Change list-inline to list-unstyled -->
+                    <li><i class="fa-solid fa-recycle fa-2xl" style="color: #c34a36;"></i></li>
+                    <li class="listtitle">Waste Collection:</li>
+                    <li>Non-hazardous waste collection</li>
+                    <li>Hazardous waste collection</li>
+                </ul>
             </div>
-            <hr>
-        {% endfor %}
+            <div class="col-md-4">
+                <ul class="list-unstyled text-center">
+                    <!-- Change list-inline to list-unstyled -->
+                    <li><i class="fa-solid fa-right-left fa-2xl" style="color: #c34a36;"></i></li>
+                    <li class="listtitle">Site-to-Site Transfer:</li>
+                    <li>Seamless transportation between two addresses</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-unstyled text-center">
+                    <!-- Change list-inline to list-unstyled -->
+                    <li><i class="fa-solid fa-van-shuttle fa-2xl" style="color: #c34a36;"></i></li>
+                    <li class="listtitle">Van and Driver Hire:</li>
+                    <li>Flexible van rental with an experienced driver at your service</li>
+                </ul>
+            </div>
+            <div class="col-md-12 text-center">
+                <ul class="list-unstyled">
+                    <li><i class="fa-solid fa-circle-question fa-2xl" style="color: #c34a36;"></i></li>
+                    <li class="listtitle">Additional Services:</li>
+                    <li>Tailored transportation solutions to meet your specific requirements. Contact us to discuss
+                        further options and customization.</li>
+                </ul>
+            </div>
+            <div class="col-md-12 text-center">
+                <p class="list-unstyled">
+                    Book one of the services or Contact Us!
+                </p>
+            </div>
+        </div>
+        <hr>
+        <h3>List of the Vans</h3>
+        <div class="row">
+            {% for image in home_page.image_set.all %}
+            <div class="col-md-4">
+                <img src="{{ image.image.url }}" alt="Image" class="img-fluid">
+            </div>
+            {% endfor %}
+        </div>
+        <p class="text-end"><em>Updated on: {{ home_page.updated_on }}</em></p>
     </div>
+    <hr>
+    {% endfor %}
+</div>
 {% endblock content %}
 
 {% block footerimage %}
-    <div class="image-footer">
-    </div>
+<div class="image-footer">
+</div>
 {% endblock footerimage %}

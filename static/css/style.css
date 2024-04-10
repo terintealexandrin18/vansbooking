@@ -7,8 +7,10 @@
 
 /* banner*/
 .banner {
-    background-color: #B0A8B9;
+    margin: 1em;
+    background-color: #768581d1;
     text-align: center;
+    color: white;
 }
  /* Footer */
 
@@ -45,6 +47,7 @@
 
  .opening {
     text-align: center;
+    padding-bottom: 1em;
  }
 
  .social-icon:hover {
