@@ -7,6 +7,6 @@ def home(request):
     home_pages = HomePage.objects.all().order_by('-updated_on')
     return render(
         request,
-        "bookings/index.html",
+        "homepage/index.html",
         {"home_pages": home_pages},
     )

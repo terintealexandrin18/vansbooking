@@ -8,7 +8,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('bookings', '0002_homepage_featured_image'),
+        ('homepage', '0002_homepage_featured_image'),
     ]
 
     operations = [
@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('image', cloudinary.models.CloudinaryField(max_length=255, verbose_name='image')),
-                ('home_page', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='bookings.homepage')),
+                ('home_page', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='homepage.homepage')),
             ],
         ),
     ]

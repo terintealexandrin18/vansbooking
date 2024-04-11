@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django_summernote',
     'cloudinary',
-    'bookings',
+    'homepage',
     'allbookings',
     'viewthebooking',
     'contact',
