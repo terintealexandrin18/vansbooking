@@ -1,5 +1,5 @@
  /* Index Page edit image*/
- .img-fluid {
+.img-fluid {
      max-width: 92%;
      height: 92%;
      border-radius: 125px;
@@ -26,7 +26,7 @@
     margin-left: auto;
   }
  
- .image-footer {
+.image-footer {
      background-image: url('/static/images/logistic.jpg');
      background-size: cover;
      background-position: center;
@@ -35,49 +35,55 @@
      width: 100%;
      margin-top: 15px;
  }
- .social-icons {
+.social-icons {
     margin: 10px;
     font-size: 1.2em;
  }
 
- .socialmedia {
+.socialmedia {
      font-size: 1.5em;
      text-align: center;
  }
 
- .opening {
+.opening {
     text-align: center;
-    padding-bottom: 1em;
  }
 
- .social-icon:hover {
+.social-icon:hover {
     color: #B0A8B9;
   }
+
+footer div:first-child {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+
  /* Nav Bar */
- .navbardesign {
+.navbardesign {
      background-color: #C34A36;
  }
 
- .navbardesign a {
+.navbardesign a {
      color: black;
  }
  
- .navbar-nav .nav-link:hover {
+.navbar-nav .nav-link:hover {
     color: #B0A8B9;
   }
 
  /* List */
- ul {
+ul {
     list-style-type: none;
   }
- .listtitle {
+.listtitle {
     text-align:center;
     font-weight: 700;
 
  }
 /* view booking page */
 
- .viewbooking {
+.viewbooking {
     margin-bottom: 20px;
 }
 .yourbooking {
@@ -150,3 +156,20 @@
     box-sizing: border-box;
 }
 
+/* contact us page  */
+.form-container {
+    background-color: #d8d7c7;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #C34A36;
+    margin-bottom: 20px; 
+}
+
+.map-container {
+    padding: 1em;
+    
+}
+
+.contact-info p a {
+    color: black; 
+}
