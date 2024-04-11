@@ -1,11 +1,12 @@
 {% load static %}
 
 {% url 'home' as home_url %}
-
 {% url 'account_login' as login_url %}
 {% url 'make_booking' as make_booking_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% url 'contact_us' as contact_url %}
+{% url 'view-the-booking' as view_booking_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -116,7 +117,7 @@
   </div>
       <div class="socialmedia">
         <h4>You can follow us on Social Media:</h4>
-        <div class="social-icons">
+        <div class="icons-footer">
           <a href="https://www.facebook.com/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
           <a href="https://www.instagram.com/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
           <a href="https://www.linkedin.com/company/" target="_blank" class="social-icon"><i
@@ -131,7 +132,7 @@
         
       </ul>
       <div>
-        <p><span>&copy</span>Made and Design by: <a href="https://github.com/terintealexandrin18" target="_blank">Alex Terinte</a></p>
+        <p id="github"><span>&copy</span>Made and Design by: <a href="https://github.com/terintealexandrin18" target="_blank">Alex Terinte</a></p>
         
       </div>
     </div>
