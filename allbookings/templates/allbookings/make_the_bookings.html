@@ -6,7 +6,6 @@
 
 <div class="container yourbooking">
     <div class="row">
-
         <div class="col-md-6 offset-md-3">
             <h3>Make a Booking</h3>
             <hr>
@@ -16,6 +15,7 @@
                     {% csrf_token %}
                     
                     <!-- Display error message if it exists -->
+
                     {% if booking_form.non_field_errors %}
                     <div class="alert alert-danger">
                         {{ booking_form.non_field_errors }}
@@ -23,30 +23,35 @@
                     {% endif %}
                     
                     <!-- Contact Number -->
+
                     <div class="form-group">
                         <label for="id_contact_number">Contact Number:</label>
                         {{ booking_form.contact_number }}
                     </div>
                 
                     <!-- Date -->
+
                     <div class="form-group">
                         <label for="id_date">Date:</label>
                         {{ booking_form.date }}
                     </div>
                 
                     <!-- Time Slot -->
+
                     <div class="form-group">
                         <label for="id_time_slot">Time Slot:</label>
                         {{ booking_form.time_slot }}
                     </div>
                 
                     <!-- Choose a Service -->
+
                     <div class="form-group">
                         <label for="id_choose_a_services">Choose a Service:</label>
                         {{ booking_form.choose_a_services }}
                     </div>
                 
                     <!-- Comments -->
+
                     <div class="form-group">
                         <label for="id_comments">Comments:</label>
                         {{ booking_form.comments }}

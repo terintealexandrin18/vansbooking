@@ -3,6 +3,16 @@ from .models import BookingRequest
 
 @admin.register(BookingRequest)
 class BookingRequestAdmin(admin.ModelAdmin):
+    """
+    Custom admin panel configuration for booking requests.
+
+    **Model**
+    :model:`allbookings.BookingRequest`
+
+    Action to approve/cancel/delete selected booking requests.
+
+
+    """
     list_display = ('get_username', 'contact_number', 'date', 'time_slot', 'choose_a_services', 'comments', 'status', 'created_at')
     list_filter = ('status',)
     actions = ['approve_requests', 'cancel_requests']

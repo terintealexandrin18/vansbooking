@@ -1,10 +1,12 @@
+```html
 {% extends 'base.html' %}
 
 {% block content %}
-
 <div class="container yourbooking">
     <div class="row align-items-center">
+
         <!-- Left Column -->
+
         <div class="col-lg-6">
             <div class="col-md-12">
                 <h3>Contact Us</h3>
@@ -16,6 +18,7 @@
                         {% csrf_token %}
 
                         <!-- Display error message if it exists -->
+
                         {% if form.errors %}
                         <div class="alert alert-danger">
                             Please correct the errors below.
@@ -23,41 +26,47 @@
                         {% endif %}
 
                         <!-- First Name -->
+
                         <div class="form-group">
                             <label for="id_first_name">First Name:</label>
                             {{ form.first_name }}
                         </div>
 
                         <!-- Last Name -->
+
                         <div class="form-group">
                             <label for="id_last_name">Last Name:</label>
                             {{ form.last_name }}
                         </div>
 
                         <!-- Contact Number -->
+
                         <div class="form-group">
                             <label for="id_contact_number">Contact Number:</label>
                             {{ form.contact_number }}
                         </div>
 
                         <!-- Email Address -->
+
                         <div class="form-group">
                             <label for="id_email">Email Address:</label>
                             {{ form.email }}
                         </div>
 
                         <!-- Your Message -->
+
                         <div class="form-group">
                             <label for="id_message">Your Message:</label>
                             {{ form.message }}
                         </div>
-
                         <button type="submit" class="btn lgbutton">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
+
         <!-- Right Column -->
+
         <div class="col-lg-6">
             <h4>Contact Information</h4>
             <hr>
@@ -76,16 +85,18 @@
 </div>
 
 <!-- Map -->
+
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
             <div class="form-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9934.92132140065!2d-0.13225131367948798!3d51.499815983041294!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c7be3d9791%3A0x67bb55b5c4867f8c!2sLondon%20Eye%20ticket%20office!5e0!3m2!1sen!2suk!4v1712826598786!5m2!1sen!2suk" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9934.92132140065!2d-0.13225131367948798!3d51.499815983041294!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c7be3d9791%3A0x67bb55b5c4867f8c!2sLondon%20Eye%20ticket%20office!5e0!3m2!1sen!2suk!4v1712826598786!5m2!1sen!2suk"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
 </div>
 
-
-
 {% endblock content %}
+```

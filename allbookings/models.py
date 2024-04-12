@@ -1,10 +1,14 @@
-from django.db import models
 from datetime import date
 from django.contrib.auth.models import User
+from django.db import models
 
 # Create your models here.
 
 class BookingRequest(models.Model):
+    """
+    Represents a booking request made by a user.
+    """
+    
     TIME_CHOICES = [
         ('7:00 - 8:30', '7:00 - 8:30'),
         ('9:00 - 10:30', '9:00 - 10:30'),

@@ -1,9 +1,21 @@
 from django.shortcuts import render
-from .forms import ContactForm
 from django.contrib import messages
+from .forms import ContactForm
+
 
 
 def contact_us(request):
+    """
+    Render the contact form and handle form submission for sending messages.
+
+    **Context**
+    - ``form``: An instance of :form:`contact.ContactForm`.
+    - ``submitted``: Boolean indicating if the form has been submitted successfully.
+
+    **Template**
+    :template:`contact/contact.html`
+    """
+    
     submitted = False
     if request.method == 'POST':
         form = ContactForm(request.POST)

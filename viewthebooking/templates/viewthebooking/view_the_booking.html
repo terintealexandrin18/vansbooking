@@ -6,11 +6,17 @@
 <div class="container yourbooking">
     <div class="row">
         <div class="col-md-6 offset-md-3">
+
+            <!-- Title -->
+            
             <h3>Your Bookings</h3>
             <hr>
             <h5>Please find below your booking requests. Kindly check their current status.</h5>
             {% for booking in bookings %}
             <div class="viewbooking">
+
+                <!-- Card view for booking -->
+                
                 <div class="card mb-3 ">
                     <div class="card-body">
                         <h5 class="card-title">Service: {{ booking.choose_a_services }}</h5>
@@ -18,19 +24,28 @@
                         <p class="card-text">Date: {{ booking.date }}</p>
                         <p class="card-text">
                             Status:
+
+                            <!-- Status of the booking -->
+
                             <span
-                                class="{% if booking.status == 'pending' %}status-pending{% elif booking.status == 'approved' %}status-approved{% endif %}">
+                                class="{% if booking.status == 'pending' %}status-pending{% elif booking.status == 'approved' %}status-approved{% elif booking.status == 'cancelled' %}status-cancelled{% endif %}">
                                 {% if booking.status == 'pending' %}
                                 In Progress. Waiting for approval.
                                 {% elif booking.status == 'approved' %}
                                 Booking confirmed.
+                                {% elif booking.status == 'cancelled' %}
+                                Booking cancelled.
                                 {% endif %}
                             </span>
                         </p>
+
+                        <!-- Edit and Delete buttons -->
+
                         {% if user.is_authenticated and booking.user == user %}
-                        <button class="btn btn-edit dgbutton" data-booking-id="{% url 'edit-booking' booking.id %}">Edit Booking</button>
-                        <button class="btn btn-delete lgbutton" data-booking-id="{% url 'delete-booking' booking.id %}">Delete Booking</button>
-                        
+                        <button class="btn btn-edit dgbutton" data-booking-id="{% url 'edit-booking' booking.id %}">Edit
+                            Booking</button>
+                        <button class="btn btn-delete lgbutton"
+                            data-booking-id="{% url 'delete-booking' booking.id %}">Delete Booking</button>
                         {% endif %}
                     </div>
                 </div>

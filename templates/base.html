@@ -1,3 +1,4 @@
+```html
 {% load static %}
 
 {% url 'home' as home_url %}
@@ -18,13 +19,16 @@
   <meta name="Vans Booking" content="Book vans for waste collection or transfers between two addresses." />
 
   <!-- Font Awesome CSS -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <!-- Bootstrap CSS -->
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
   <!-- Custom CSS -->
+
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
   <title>Vans Booking</title>
@@ -34,87 +38,98 @@
 <body class="d-flex flex-column h-100">
 
   <!-- Nav Bar -->
-<div class="navbardesign">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="/static/images/van.png" alt="van vw" width="30" height="24">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'make_the_bookings' %}">Make a Booking</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'view-the-booking' %}">View my Booking</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Account
-            </a>
-            <ul class="dropdown-menu navbardesign">
-              <!-- Modify dropdown menu for Django Allauth -->
+
+  <div class="navbardesign">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="/static/images/van.png" alt="van vw" width="30" height="24">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'make_the_bookings' %}">Make a Booking</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'view-the-booking' %}">View my Booking</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Account
+              </a>
+              <ul class="dropdown-menu navbardesign">
+
+                <!-- Modify dropdown menu for Django Allauth -->
+
+                {% if user.is_authenticated %}
+                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                {% else %}
+                <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+                {% endif %}
+              </ul>
+            </li>
+            <li class="nav-item">
+
+              <!-- Modify nav-link-disabled for Django Allauth -->
+
               {% if user.is_authenticated %}
-              <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
-              
+              <a class="nav-link" aria-disabled="true">You are Logged In as: {{ user.username }}</a>
               {% else %}
-              <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
-              <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+              <a class="nav-link disabled" aria-disabled="true">You are not logged in</a>
               {% endif %}
-            </ul>
-          </li>
-          <li class="nav-item">
-            <!-- Modify nav-link-disabled for Django Allauth -->
-            {% if user.is_authenticated %}
-            <a class="nav-link" aria-disabled="true">You are Logged In as: {{ user.username }}</a>
-            {% else %}
-            <a class="nav-link disabled" aria-disabled="true">You are not logged in</a>
-            {% endif %}
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- End Nav Bar -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        {% for message in messages %}
+        <div class="banner alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+          {{ message | safe }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
       </div>
     </div>
-  </nav>
-</div>
-<!-- End Nav Bar -->
-<div class="container">
-  <div class="row">
-      <div class="col-md-6 offset-md-3">
-          {% for message in messages %}
-          <div class="banner alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-              {{ message | safe }}
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-          {% endfor %}
-      </div>
   </div>
-</div>
-
   <div class="content">
+
     {% block content %}
     <!-- Content for other pages -->
     {% endblock content %}
+
   </div>
 
   <!-- Footer -->
+
   <footer class="mt-auto">
     <div class="container-fluid navbardesign">
       <div class="row">
-      <div class="col-12">
-      {% block footerimage %}
-      <!-- Footer image  -->
-      {% endblock footerimage%}
-    </div>
-  </div>
+        <div class="col-12">
+          {% block footerimage %}
+          
+          <!-- Footer image  -->
+
+          {% endblock footerimage%}
+        </div>
+      </div>
       <div class="socialmedia">
         <h4>You can follow us on Social Media:</h4>
         <div class="icons-footer">
@@ -124,22 +139,20 @@
               class="fab fa-linkedin"></i></a>
         </div>
       </div>
+      <br>
       <div class="opening">
-      <h5>We are Open:</h5>
-      <ul>
-        <li>Monday - Friday: 7AM - 7PM</li>
-        <li>Saturday - Sunday: Close</li>
-        
-      </ul>
-      <div>
-        <p id="github"><span>&copy</span>Made and Design by: <a href="https://github.com/terintealexandrin18" target="_blank">Alex Terinte</a></p>
-        
+        <h5>We are Open:</h5>
+        <ul>
+          <li>Monday - Friday: 7AM - 7PM</li>
+          <li>Saturday - Sunday: Close</li>
+        </ul>
+        <div>
+          <p id="github"><span>&copy</span>Made and Design by: <a href="https://github.com/terintealexandrin18"
+              target="_blank">Alex Terinte</a></p>
+        </div>
       </div>
     </div>
-    </div>
-    
   </footer>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
   </script>
