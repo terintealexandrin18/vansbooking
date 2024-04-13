@@ -99,7 +99,7 @@ def booking_delete(request, booking_id):
         if request.method == 'POST':
             booking.delete()
             messages.success(request, 'Booking deleted!')
-            return redirect('view-the-booking')  # Redirect to desired URL after successful deletion
+            return redirect('view-the-booking') 
         else:
             return render(request, 'allbookings/delete_the_bookings.html', {'booking': booking})
     else:
