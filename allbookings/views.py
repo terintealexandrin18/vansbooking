@@ -21,16 +21,17 @@ def make_booking(request):
     if request.method == "POST":
         booking_form = BookingForm(data=request.POST)
         if booking_form.is_valid():
-            existing_booking = BookingRequest.objects.filter(user=request.user, date=booking_form.cleaned_data['date'], time_slot=booking_form.cleaned_data['time_slot']).exists()
+            existing_booking = BookingRequest.objects.filter(
+                user=request.user,
+                date=booking_form.cleaned_data['date'],
+                time_slot=booking_form.cleaned_data['time_slot']
+            ).exists()
             if existing_booking:
                 booking_form.add_error(None, 'Sorry, but the time slot you selected is no longer available. Please choose a different time slot that suits your schedule.')
             else:
                 booking_form.instance.user = request.user
                 booking_form.save()
-                messages.success(
-                    request,
-                    'Your booking request has been submitted successfully!'
-                )
+                messages.success(request, 'Your booking request has been submitted successfully!')
                 return HttpResponseRedirect(reverse('view-the-booking'))
     else:
         booking_form = BookingForm()

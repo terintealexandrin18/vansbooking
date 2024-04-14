@@ -27,3 +27,4 @@ def view_booking(request):
     
     bookings = BookingRequest.objects.filter(user=request.user)
     return render(request, 'viewthebooking/view_the_booking.html', {'bookings':bookings})
+    
