@@ -6,10 +6,6 @@
     transition: transform 0.3s ease-in-out; 
 }
 
-.img-fluid:hover {
-    transform: scale(1.1); 
-}
-
 /* Banner */
 .banner {
     margin: 1em;
@@ -223,4 +219,19 @@ ul {
     height: 450px;
     border: 0;
     border: 1px solid #C34A36;
+}
+
+/* Hover effect for images for home page */
+
+@media (hover: none) and (pointer: coarse), (max-width: 767px) {
+    .img-fluid:hover {
+        transform: none; 
+    }
+}
+
+
+@media (hover: hover) and (pointer: fine), (min-width: 768px) {
+    .img-fluid:hover {
+        transform: scale(1.1);
+    }
 }
