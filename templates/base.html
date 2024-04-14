@@ -15,7 +15,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="Vans Booking" content="Book vans for waste collection or transfers between two addresses." />
+  <meta name="Van's Transportation" content="Book vans for waste collection or transfers between two addresses." />
 
   <!-- Font Awesome CSS -->
 
@@ -30,7 +30,7 @@
 
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-  <title>Vans Booking</title>
+  <title>Van's Transportation</title>
 
 </head>
 
@@ -41,8 +41,9 @@
   <div class="navbardesign">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{% url 'home' %}">
           <img src="/static/images/van.png" alt="van vw" width="30" height="24">
+          <span class="navbar-title">Van's Transportation</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
