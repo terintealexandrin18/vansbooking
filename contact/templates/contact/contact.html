@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% block content %}
+{% load static %}
+
 <div class="container yourbooking">
     <div class="row align-items-center">
 
@@ -15,6 +17,7 @@
                 <div class="form-container">
                     <form method="post">
                         {% csrf_token %}
+                        {{ form | crispy }}
 
                         <!-- Display error message if it exists -->
 
@@ -23,41 +26,6 @@
                             Please correct the errors below.
                         </div>
                         {% endif %}
-
-                        <!-- First Name -->
-
-                        <div class="form-group">
-                            <label for="id_first_name">First Name:</label>
-                            {{ form.first_name }}
-                        </div>
-
-                        <!-- Last Name -->
-
-                        <div class="form-group">
-                            <label for="id_last_name">Last Name:</label>
-                            {{ form.last_name }}
-                        </div>
-
-                        <!-- Contact Number -->
-
-                        <div class="form-group">
-                            <label for="id_contact_number">Contact Number:</label>
-                            {{ form.contact_number }}
-                        </div>
-
-                        <!-- Email Address -->
-
-                        <div class="form-group">
-                            <label for="id_email">Email Address:</label>
-                            {{ form.email }}
-                        </div>
-
-                        <!-- Your Message -->
-
-                        <div class="form-group">
-                            <label for="id_message">Your Message:</label>
-                            {{ form.message }}
-                        </div>
                         <button type="submit" class="btn lgbutton">Submit</button>
                     </form>
                 </div>
@@ -98,4 +66,3 @@
 </div>
 
 {% endblock content %}
-```

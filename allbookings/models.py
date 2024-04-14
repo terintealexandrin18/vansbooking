@@ -33,9 +33,9 @@ class BookingRequest(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     contact_number = models.CharField(max_length=12, blank=False, null=False)
-    date = models.DateField(default=date.today, blank=False, null=False)
-    time_slot = models.CharField(max_length=100, choices=TIME_CHOICES, blank=False, null=False, default='7AM')
-    choose_a_services = models.CharField(max_length=100, choices=SERVICE_CHOICES, default='Additional Services - Write the details in Comments section')
+    date = models.DateField(blank=False, null=False)
+    time_slot = models.CharField(max_length=100, choices=TIME_CHOICES, blank=False, null=False)
+    choose_a_services = models.CharField(max_length=100, choices=SERVICE_CHOICES)
     comments = models.TextField(max_length=250)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
     created_at = models.DateTimeField(auto_now_add=True, null=True)
