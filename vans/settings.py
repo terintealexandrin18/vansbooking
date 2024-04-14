@@ -118,7 +118,8 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.herokuapp.com",
     "https://*.gitpod.io",
     "https://8000-terintealex-vansbooking-ed8rmfjfmpt.ws-eu108.gitpod.io",
-    "https://8000-terintealex-vansbooking-ed8rmfjfmpt.ws-eu110.gitpod.io/"
+    "https://8000-terintealex-vansbooking-ed8rmfjfmpt.ws-eu110.gitpod.io/",
+    "https://vansbooking-37cc026955c5.herokuapp.com/"
     
 
 ]
