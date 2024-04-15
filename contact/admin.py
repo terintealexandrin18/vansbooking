@@ -3,6 +3,7 @@ from .models import ContactMessage
 
 # Register your models here.
 
+
 @admin.register(ContactMessage)
 class ContactMessageAdmin(admin.ModelAdmin):
     """
@@ -16,7 +17,8 @@ class ContactMessageAdmin(admin.ModelAdmin):
     **Template**
     :template:`contact/contact_form.html`
     """
-    list_display = ['first_name', 'last_name', 'contact_number', 'email', 'message', 'created_at']
+    list_display = ['first_name', 'last_name', 'contact_number',
+                    'email', 'message', 'created_at']
     list_filter = ['read']
     actions = ['mark_as_read']
 

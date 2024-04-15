@@ -1,10 +1,10 @@
-
 from django.test import TestCase, Client
 from django.urls import reverse
 from .forms import ContactForm
 
+
 class TestContactUsView(TestCase):
-    
+
     def setUp(self):
         self.client = Client()
 
@@ -29,4 +29,5 @@ class TestContactUsView(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'contact/contact.html')
         self.assertTrue(response.context['submitted'])
-        self.assertContains(response, 'Your message has been sent successfully!')
+        self.assertContains(response,
+                            'Your message has been sent successfully!')

@@ -6,6 +6,7 @@ from .models import BookingRequest
 from django.contrib.auth.decorators import login_required
 from .forms import BookingForm
 
+
 @login_required
 def make_booking(request):
     """
@@ -27,11 +28,17 @@ def make_booking(request):
                 time_slot=booking_form.cleaned_data['time_slot']
             ).exists()
             if existing_booking:
-                booking_form.add_error(None, 'Sorry, but the time slot you selected is no longer available. Please choose a different time slot that suits your schedule.')
+                booking_form.add_error(
+                    None,
+                    ('Sorry, but the time slot you selected is no longer '
+                     'available. Please choose a different time slot that '
+                     'suits your schedule.')
+                )
             else:
                 booking_form.instance.user = request.user
                 booking_form.save()
-                messages.success(request, 'Your booking request has been submitted successfully!')
+                messages.success(request, 'Your booking request has been '
+                                          'submitted successfully!')
                 return HttpResponseRedirect(reverse('view-the-booking'))
     else:
         booking_form = BookingForm()
@@ -42,12 +49,13 @@ def make_booking(request):
         {"booking_form": booking_form},
     )
 
+
 @login_required
 def booking_edit(request, booking_id):
     """
     Renders the page for editing a booking.
-
-    Gets the specific :model:`allbookings.BookingRequest` instance by booking_id.
+    Gets the specific :model:`allbookings.BookingRequest`
+    instance by booking_id.
 
     **Context**
     ``booking_form``
@@ -58,12 +66,21 @@ def booking_edit(request, booking_id):
     """
     booking = get_object_or_404(BookingRequest, pk=booking_id)
     booking_form = BookingForm(request.POST or None, instance=booking)
-    
+
     if request.method == "POST":
         if booking_form.is_valid() and booking.user == request.user:
-            existing_booking = BookingRequest.objects.filter(user=request.user, date=booking_form.cleaned_data['date'], time_slot=booking_form.cleaned_data['time_slot']).exclude(id=booking_id).exists()
+            existing_booking = BookingRequest.objects.filter(
+                user=request.user,
+                date=booking_form.cleaned_data['date'],
+                time_slot=booking_form.cleaned_data['time_slot']
+            ).exclude(
+                id=booking_id
+            ).exists()
             if existing_booking:
-                booking_form.add_error(None, 'Sorry, but the time slot you selected is no longer available. Please choose a different time slot that suits your schedule.')
+                booking_form.add_error(None, 'Sorry, but the time slot you '
+                                       'selected is no longer available. '
+                                       'Please choose a different time '
+                                       'slot that suits your schedule.')
             else:
                 updated_booking = booking_form.save(commit=False)
                 if updated_booking.status == 'approved':
@@ -80,12 +97,13 @@ def booking_edit(request, booking_id):
         {"booking_form": booking_form},
     )
 
+
 @login_required
 def booking_delete(request, booking_id):
     """
     Renders the confirmation page for deleting a booking.
-
-    Gets the specific :model:`allbookings.BookingRequest` instance by booking_id.
+    Gets the specific :model:`allbookings.BookingRequest`
+    instance by booking_id.
 
     **Context**
     ``booking``
@@ -100,9 +118,13 @@ def booking_delete(request, booking_id):
         if request.method == 'POST':
             booking.delete()
             messages.success(request, 'Booking deleted!')
-            return redirect('view-the-booking') 
+            return redirect('view-the-booking')
         else:
-            return render(request, 'allbookings/delete_the_bookings.html', {'booking': booking})
+            return render(
+                request,
+                'allbookings/delete_the_bookings.html',
+                {'booking': booking}
+            )
     else:
         messages.error(request, 'You can only delete your own bookings!')
         return redirect('view-the-booking')

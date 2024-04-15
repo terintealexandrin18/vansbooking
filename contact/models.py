@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class ContactMessage(models.Model):
     """
     Model representing a contact message.
@@ -13,4 +14,3 @@ class ContactMessage(models.Model):
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     read = models.BooleanField(default=False)
- 

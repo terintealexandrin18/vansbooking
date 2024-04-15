@@ -13,7 +13,8 @@ class HomePageModelTest(TestCase):
     def test_updated_on_auto_now(self):
         home_page = HomePage.objects.get(id=1)
         current_time = timezone.now()
-        self.assertLessEqual((current_time - home_page.updated_on).total_seconds(), 1)
+        self.assertLessEqual((current_time - home_page.updated_on)
+                             .total_seconds(), 1)
 
 
 class ImageModelTest(TestCase):
@@ -21,7 +22,8 @@ class ImageModelTest(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        home_page = HomePage.objects.create(title='Test HomePage', content='Test content')
+        home_page = HomePage.objects.create(title='Test HomePage',
+                                            content='Test content')
         Image.objects.create(home_page=home_page, image='test_image.jpg')
 
     def test_home_page_foreign_key(self):

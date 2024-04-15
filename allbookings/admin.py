@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import BookingRequest
 
+
 @admin.register(BookingRequest)
 class BookingRequestAdmin(admin.ModelAdmin):
     """
@@ -13,7 +14,8 @@ class BookingRequestAdmin(admin.ModelAdmin):
 
 
     """
-    list_display = ('get_username', 'contact_number', 'date', 'time_slot', 'choose_a_services', 'comments', 'status', 'created_at')
+    list_display = ('get_username', 'contact_number', 'date', 'time_slot',
+                    'choose_a_services', 'comments', 'status', 'created_at')
     list_filter = ('status',)
     actions = ['approve_requests', 'cancel_requests']
 
@@ -28,6 +30,5 @@ class BookingRequestAdmin(admin.ModelAdmin):
     def cancel_requests(self, request, queryset):
         queryset.update(status='cancelled')
         self.message_user(request, "Selected requests have been cancelled.")
-    
     approve_requests.short_description = "Approve selected requests"
     cancel_requests.short_description = "Cancel selected requests"

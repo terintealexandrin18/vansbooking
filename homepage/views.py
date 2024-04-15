@@ -3,11 +3,13 @@ from .models import HomePage
 
 # Create your views here.
 
+
 def home(request):
     """
     View function for the homepage.
 
-    Retrieves all HomePage objects and orders them by 'updated_on' field in descending order.
+    Retrieves all HomePage objects and orders them by 'updated_on'
+    field in descending order.
 
     **Context:**
     - ``home_pages``: QuerySet of all HomePage objects.

@@ -17,4 +17,5 @@ class HomePageViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'homepage/index.html')
         self.assertIn('home_pages', response.context)
-        self.assertEqual(len(response.context['home_pages']), HomePage.objects.count())
+        self.assertEqual(len(response.context['home_pages']),
+                         HomePage.objects.count())
