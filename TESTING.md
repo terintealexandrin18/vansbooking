@@ -7,7 +7,7 @@
 - CSS validation
 - Automatic test validation
 - Manual Testing 
-
+- Additional 
 
 ## Testing User Stories
  1 As a Site User, I want to register a new account so that I can make online bookings.
@@ -65,38 +65,118 @@
 
 |Page | Result | Image|
 | --- | --- |--- |
-| Allbookings - Admin    | Pass    |![](assets/images/allbookings_admin.png) |
-| Allbookings - Form    | Pass     |![](assets/images/allbookings_forms.png) |
-| Allbookings - Models    | Pass     |![](assets/images/allbookings_models.png) |
-| Allbookings - Test Views    |Pass     |![](assets/images/allbookings_test_view.png) |
-| Allbookings - URLS    |Pass     |![](assets/images/allbookings_urls.png) |
-| Allbooking - Views    |Pass     |![](assets/images/allbookings_views.png) |
-| Contact - Admin    |Pass     |![](assets/images/contact_admin.png) |
-| Contact - Forms    |Pass     |![](assets/images/contact_forms.png) |
-| Contact - Test Forms    |Pass     |![](assets/images/contact_test_forms.png) |
-| Contact - Test Views    |Pass     |![](assets/images/contact_test_view.png) |
-| Contact - URLS   |Pass     |![](assets/images/contact_url.png) |
-| Contact - Views    |Pass     |![](assets/images/contact_view.png) |
-| Contact - Models    |Pass     |![](assets/images/contact_models.png) |
-| Homepage - Admin    |Passv     |![](assets/images/homepage_admin.png) |
-| Homepage - Models    |Pass     |![](assets/images/homepage_models.png) |
-| Homepage - Test Models    |Pass     |![](assets/images/homepage_test_models.png) |
-| Homepage - Test View    |Pass     |![](assets/images/homepage_test_view.png) |
-| Homepage - URLS    |Pass     |![](assets/images/homepage_urls.png) |
-| Homepage - Views    |Pass     |![](assets/images/homepage_views.png) |
-| Viewthebookin - Test View  |Pass     |![](assets/images/viewthebooking_test_view.png) |
-| Viewthebookin - URLS    |Pass     |![](assets/images/viewthebooking_urls.png) |
-| Viewthebookin - Views    |Pass     |![](assets/images/viewthebooking_views.png) |
+| Allbookings - Admin    | Pass    |![ Allbookings - Admin ](assets/images/allbookings_admin.png) |
+| Allbookings - Form    | Pass     |![ Allbookings - Form ](assets/images/allbookings_forms.png) |
+| Allbookings - Models    | Pass     |![Allbookings - Models](assets/images/allbookings_models.png) |
+| Allbookings - Test Views    |Pass     |![Allbookings - Test Views](assets/images/allbookings_test_view.png) |
+| Allbookings - URLS    |Pass     |![Allbookings - URLS](assets/images/allbookings_urls.png) |
+| Allbooking - Views    |Pass     |![Allbooking - Views](assets/images/allbookings_views.png) |
+| Contact - Admin    |Pass     |![Contact - Admin](assets/images/contact_admin.png) |
+| Contact - Forms    |Pass     |![Contact - Forms](assets/images/contact_forms.png) |
+| Contact - Test Forms    |Pass     |![Contact - Test Forms](assets/images/contact_test_forms.png) |
+| Contact - Test Views    |Pass     |![Contact - Test Views](assets/images/contact_test_view.png) |
+| Contact - URLS   |Pass     |![Contact - URLS](assets/images/contact_url.png) |
+| Contact - Views    |Pass     |![Contact - Views](assets/images/contact_view.png) |
+| Contact - Models    |Pass     |![Contact - Models](assets/images/contact_models.png) |
+| Homepage - Admin    |Passv     |![Homepage - Admin](assets/images/homepage_admin.png) |
+| Homepage - Models    |Pass     |![Homepage - Models](assets/images/homepage_models.png) |
+| Homepage - Test Models    |Pass     |![Homepage - Test Models](assets/images/homepage_test_models.png) |
+| Homepage - Test View    |Pass     |![Homepage - Test View](assets/images/homepage_test_view.png) |
+| Homepage - URLS    |Pass     |![Homepage - URLS](assets/images/homepage_urls.png) |
+| Homepage - Views    |Pass     |![Homepage - Views](assets/images/homepage_views.png) |
+| Viewthebookin - Test View  |Pass     |![Viewthebookin - Test View](assets/images/viewthebooking_test_view.png) |
+| Viewthebookin - URLS    |Pass     |![Viewthebookin - URLS](assets/images/viewthebooking_urls.png) |
+| Viewthebookin - Views    |Pass     |![Viewthebookin - Views](assets/images/viewthebooking_views.png) |
 
 ## CSS validation
 
 |Page | Result | Image|
+|-----|--------|------|
 | CSS sheet    | Pass     |![Css validation](assets/images/CSS .png) |
 
 ## Automatic test validation
-Page | Result | Image|
+|Page | Result | Image|
 | Forms and View python    | pass     |![automatic test](assets/images/automatic_test.png) |
 
 ## Manual Testing
 
-### Home Page:
+- All pages:
+
+|Item Testest | Result | Comments |
+|-------------|--------|----------|
+| Nav Bar - links | Pass | Navigate to the correct page |
+| Nav Bar - hoover effect  | Pass  | Available only on large screen |
+| Nav Bar - username | Pass  | Logged in: username appears in nav bar.Logged out: message says "You are not logged in."   |    
+| Web site logo - link| Pass  | Navigate to home page  |  
+| Footer - hover effect | Pass   | Available only on the large screen on social media icon  |  
+| Footer - social media icons | Pass  | All open in a new tab  |  
+| Footer - GitHub|Pass  |Open the GitHub in a new tab  |  
+
+- Home Page:
+
+|Item Testest | Result | Comments |
+|-------------|--------|----------|
+| Admin cotent| Pass | Visible on the page  |  
+| Services title | Pass  | When click on titles will navigate to booking page  |  
+| Services icons| Pass | Hover effect increasing size only for large screens  |  
+|Book and Contact Us | Pass  | The links navigate to the correct page  |  
+|List of vans   |Pass  | Hover effect increasing size only for large screens  |  
+|Footer image| Pass  | Vissible on small and large screens  |  
+
+- Make a Booking page
+
+|Item Testest | Result | Comments |
+|-------------|--------|----------|
+| Loged out | Pass  | User can not acces the page if is not logged in  |  
+|  Form| Pass  | Can not be submitted empty, all fields need to be filled up  |  
+| Double booking | Pass  | Error message appear if booking a slot already taken  |  
+| Confirmation booking  |Pass  |Confirmation message is displayed when making a booking and redirect to the View the Booking page. |  
+
+- View my Booking page
+
+|Item Testest | Result | Comments |
+|-------------|--------|----------|
+| View the bookings |Pass  | User can see previous bookings |  
+| Booking status | Pass  |Status of the bookings is visible; color coded  |  
+| Edit booking button |Pass  | Redirect to the booking form  |  
+| Booking same slot time |Pass  |Cannot book same time slot twice. Error message will appear.  |  
+| Booking update | Pass | Booking is updating and recive the confirmation message  |  
+| Delete bookking button | Pass  | Show the booking before press again the delete button  | 
+| Back button | Pass  | From delete the booking  redirect to the view the booking page  |  
+
+- Contact Us page
+
+|Item Testest | Result | Comments |
+|-------------|--------|----------|
+|Submit form   |Pass  |The form can not be submitted emtpy. All fiedls are mandatory  |  
+| Book a Service Now | Pass  |The button will redirect the booking page  | 
+| Map |Pass  | Shows the location given  |  
+
+- Sign Us page
+|Item Testest | Result | Comments |
+|-------------|--------|----------|
+|Submit form |Pass  | Need to fill up the mandatory fields  |  
+| Confirmation message  |Pass  | Confirmation message appear when the account was created  | 
+
+- Sign in page
+|Item Testest | Result | Comments |
+|-------------|--------|----------|
+|  Confirmation message  |Pass  |Confirmation message appear when logged in  |  
+
+- Log out page
+|Item Testest | Result | Comments |
+|-------------|--------|----------|
+|  Confirmation message  |Pass  |Confirmation message appear when logged out  |  
+
+- Admin Panel page
+|Item Testest | Result | Comments |
+|-------------|--------|----------|
+|Recive Bookings  |Pass  | ![admin-booking](assets/images/admin panel.png)  | 
+|Change status  |Pass  |Booking status is changing(cancelled or confirmed)  |  
+|Contact US  |Pass  | ![admin-contactus](assets/images/admin panel - contact us.png) | 
+|Landing Page  | Pass  | Add content from admin panel.   |  
+| Summernote editor  | Pass | Content visible on home page  | 
+
+
+- It seems like there's a vulnerability in the system. If I log in under a different user - click on edit the booking - copy the url link - log out - log in under a different user - paste the url link in the browser it will bring up the same edit booking. If I make some changing to the booking and try to update the booking it  will not save. Will throw out an error. It should now allow to see editng the booking. Need more defensive programing; validation of user permissions before allowing any modification to the booking.
+![error-updating](assets/images/error updating booking.png)
