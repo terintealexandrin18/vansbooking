@@ -38,7 +38,7 @@
 - Logged-in users can easily manage bookings by clicking a button to edit. If changes are made to a confirmed order, admin approval is required.
 
 10 As a Site Admin, I want to view, approve, or delete bookings to effectively manage bookings and prevent double bookings.
-- The admin can view, approve, or delete bookings from the admin panel to effectively manage bookings and prevent double bookings. (Double booking are prevented by the pythone code too).
+- The admin can view, approve, or delete bookings from the admin panel to effectively manage bookings and prevent double bookings. (Double booking are prevented by the python code too).
 
 11 As a Site User, I want easy access to the contact page to discuss additional booking details and services.
 - The website provides easy access to the contact page, where users can discuss additional booking details and services. The company can be contacted via the online form, phone, email, or in person; all contact information is available on the contact page.
@@ -78,7 +78,7 @@
 | Contact - URLS   |Pass     |![Contact - URLS](assets/images/contact_url.png) |
 | Contact - Views    |Pass     |![Contact - Views](assets/images/contact_view.png) |
 | Contact - Models    |Pass     |![Contact - Models](assets/images/contact_models.png) |
-| Homepage - Admin    |Passv     |![Homepage - Admin](assets/images/homepage_admin.png) |
+| Homepage - Admin    |Pass     |![Homepage - Admin](assets/images/homepage_admin.png) |
 | Homepage - Models    |Pass     |![Homepage - Models](assets/images/homepage_models.png) |
 | Homepage - Test Models    |Pass     |![Homepage - Test Models](assets/images/homepage_test_models.png) |
 | Homepage - Test View    |Pass     |![Homepage - Test View](assets/images/homepage_test_view.png) |
@@ -92,17 +92,33 @@
 
 |Page | Result | Image|
 |-----|--------|------|
-| CSS sheet    | Pass     |![Css-validation](assets/images/CSS .png) |
+| CSS sheet|Pass|![Css-validation](assets/images/css.png) |
 
 ## Automatic test validation
+
 |Page | Result | Image|
-| Forms and View python    | pass     |![automatic-test](assets/images/automatic_test.png) |
+| --- | --- |--- |
+| Forms and View Python|Pass|![automatic-test](assets/images/automatic_test.png) |
 
 ## Manual Testing
 
-- All pages:
+- The test was conducted on the following devices:
+    - Iphone 15 Pro Max
+    - Iphone 14 Pro Max
+    - Iphone 8 Plus
+    - Samsung S22 Ultra
+    - Samsung Galaxy Tab A7
+    - Microsoft Surface X -  was used to develop the project 
 
-|Item Testest | Result | Comments |
+- The test was conducted on following  browsers:
+    - Google Chrome
+    - Safari
+    - Microsoft Edge
+
+
+-Testing for all pages common items:
+
+|Item Tested  | Result | Comments |
 |-------------|--------|----------|
 | Nav Bar - links | Pass | Navigate to the correct page |
 | Nav Bar - hoover effect  | Pass  | Available only on large screen |
@@ -112,76 +128,76 @@
 | Footer - social media icons | Pass  | All open in a new tab  |  
 | Footer - GitHub|Pass  |Open the GitHub in a new tab  |  
 
-- Home Page:
+- Testing for Home Page:
 
-|Item Testest | Result | Comments |
+|Item Tested  | Result | Comments |
 |-------------|--------|----------|
-| Admin cotent| Pass | Visible on the page  |  
+| Admin content| Pass | Visible on the page  |  
 | Services title | Pass  | When click on titles will navigate to booking page  |  
 | Services icons| Pass | Hover effect increasing size only for large screens  |  
 |Book and Contact Us | Pass  | The links navigate to the correct page  |  
 |List of vans   |Pass  | Hover effect increasing size only for large screens  |  
-|Footer image| Pass  | Vissible on small and large screens  |  
+|Footer image| Pass  | Visible  on small and large screens  |  
 
-- Make a Booking page
+- Testing for Make a Booking page
 
-|Item Testest | Result | Comments |
+|Item Tested  | Result | Comments |
 |-------------|--------|----------|
-| Loged out | Pass  | User can not acces the page if is not logged in  |  
+| Logged out | Pass  | User can not access the page if is not logged in  |  
 |  Form| Pass  | Can not be submitted empty, all fields need to be filled up  |  
 | Double booking | Pass  | Error message appear if booking a slot already taken  |  
 | Confirmation booking  |Pass  |Confirmation message is displayed when making a booking and redirect to the View the Booking page. |  
 
-- View my Booking page
+- Testing for View my Booking page
 
-|Item Testest | Result | Comments |
+|Item Tested  | Result | Comments |
 |-------------|--------|----------|
 | View the bookings |Pass  | User can see previous bookings |  
 | Booking status | Pass  |Status of the bookings is visible; color coded  |  
 | Edit booking button |Pass  | Redirect to the booking form  |  
 | Booking same slot time |Pass  |Cannot book same time slot twice. Error message will appear.  |  
-| Booking update | Pass | Booking is updating and recive the confirmation message  |  
-| Delete bookking button | Pass  | Show the booking before press again the delete button  | 
+| Booking update | Pass | Booking is updating and receive the confirmation message  |  
+| Delete booking button | Pass  | Show the booking before press again the delete button  | 
 | Back button | Pass  | From delete the booking  redirect to the view the booking page  |  
 
-- Contact Us page
+- Testing for Contact Us page
 
-|Item Testest | Result | Comments |
+|Item Tested  | Result | Comments |
 |-------------|--------|----------|
-|Submit form   |Pass  |The form can not be submitted emtpy. All fiedls are mandatory  |  
+|Submit form   |Pass  |The form can not be submitted empty. All fields are mandatory  |  
 | Book a Service Now | Pass  |The button will redirect the booking page  | 
 | Map |Pass  | Shows the location given  |  
 
-- Sign Us page
+- Testing for Sign Up page
 
-|Item Testest | Result | Comments |
+|Item Tested  | Result | Comments |
 |-------------|--------|----------|
 |Submit form |Pass  | Need to fill up the mandatory fields  |  
 | Confirmation message  |Pass  | Confirmation message appear when the account was created  | 
 
-- Sign in page
+- Testing for Sign in page
 
-|Item Testest | Result | Comments |
+|Item Tested  | Result | Comments |
 |-------------|--------|----------|
 |  Confirmation message  |Pass  |Confirmation message appear when logged in  |  
 
-- Log out page
+- Testing for Log out page
 
-|Item Testest | Result | Comments |
+|Item Tested  | Result | Comments |
 |-------------|--------|----------|
 |  Confirmation message  |Pass  |Confirmation message appear when logged out  |  
 
-- Admin Panel page
+- Testing for Admin Panel page
 
-|Item Testest | Result | Comments |
+|Item Tested  | Result | Comments |
 |-------------|--------|----------|
-|Recive Bookings  |Pass  | ![admin-booking](assets/images/admin panel.png)  | 
+|Recive Bookings  |Pass  | ![admin-booking](assets/images/adminpanel.png)  | 
 |Change status  |Pass  |Booking status is changing(cancelled or confirmed)  |  
-|Contact US  |Pass  | ![admin-contactus](assets/images/admin panel - contact us.png) | 
+|Contact US  |Pass  | ![admin-contactus](assets/images/adminpanel-contactus.png) | 
 |Landing Page  | Pass  | Add content from admin panel.   |  
 | Summernote editor  | Pass | Content visible on home page  | 
 
 
-- It appears that there is a vulnerability in the system. If I log in as a different user, click on "edit booking", copy the URL link, log out, and log back in as a different user, pasting the URL link will bring up the same editing page. However, if I make any changes to the booking and try to update it, it will not save and will throw an error. The system should not allow users to edit bookings without proper validation of user permissions. Therefore, need more defensive programing and validation of user permissions before allowing any modification to the booking.
+- It appears that there is a vulnerability in the system. If I log in as a different user, click on "edit booking", copy the URL link, log out, and log back in as a different user, pasting the URL link will bring up the same editing page. However, if I make any changes to the booking and try to update it, it will not save and will throw an error. The system should not allow users to edit bookings without proper validation of user permissions. Therefore, need more defensive programming and validation of user permissions before allowing any modification to the booking.
 
-  - ![error-updating](assets/images/error updating booking.png)
+  - ![error-updating](assets/images/errorupdatingbooking.png)

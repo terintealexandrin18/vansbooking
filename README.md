@@ -1,9 +1,11 @@
 # Van's Transportation
 
-<p>
-Van's Transportation is a website designed for hassle-free bookings, allowing users to easily book the services they need. The site eliminates the need for lengthy phone calls, where responses are often delayed or require callbacks. Once a booking request is submitted through the website, administrators can promptly review and approve it, streamlining the process for both users and the company.</p>
+ - Van's Transportation is a website designed for hassle-free bookings, allowing users to easily book the services they need. The site eliminates the need for lengthy phone calls, where responses are often delayed or require callbacks. Once a booking request is submitted through the website, administrators can promptly review and approve it, streamlining the process for both users and the company.
+
+![landing-page](assets/images/title.png)
 
 [Live Website] (https://vansbooking-37cc026955c5.herokuapp.com/)
+
 [Github Repository] (https://github.com/terintealexandrin18/vansbooking)
 
 ## Table of Contents
@@ -23,7 +25,7 @@ Van's Transportation is a website designed for hassle-free bookings, allowing us
       - Languages Used
       - Frameworks, Libraries & Programs
 4. - Testing
-        - Go to testing.md (to make it..)
+        - Go to [TESTING.md](TESTING.md)
 5. - Bugs
         - Unfixed Bugs
         - Fixed Bugs
@@ -71,9 +73,9 @@ Van's Transportation is a website designed for hassle-free bookings, allowing us
 
 ## Surface
 ### Color Scheme
-- The color scheme of the website primarily consists of shades of gray, muted orange, and a few accent colors. The colors were chosen for simplicity, featuring a light color scheme with an accentuated orange to highlight the most important items.
+- The color scheme of the website primarily consists of shades of grey, muted orange, and a few accent colors. The colors were chosen for simplicity, featuring a light color scheme with an accentuated orange to highlight the most important items.
 
-- Grays:
+- Greys:
   - #d8d7c7: Used for backgrounds, text, and buttons.
   - #768581: Utilized for buttons and the banner background.
   - #4c514e: Present in darker button shades.
@@ -175,7 +177,7 @@ Van's Transportation is a website designed for hassle-free bookings, allowing us
       - ![slot not available msg small screens](assets/images/booking_slotnotavailable_ss.png)
 
 - Your Booking page
-  - Users can view all of their previous bookings and their current statuses by accessing the relevant page on the website. To view this information, users must be logged in. Pending bookings will be highlighted in transparent orange, confirmed bookings in transparent green, and canceled bookings in transparent red.
+  - Users can view all of their previous bookings and their current statuses by accessing the relevant page on the website. To view this information, users must be logged in. Pending bookings will be highlighted in transparent orange, confirmed bookings in transparent green, and cancelled bookings in transparent red.
 
   - Additionally, users have the option to modify or cancel their bookings, which gives them greater flexibility and control over their scheduled services. If a confirmed booking is modified, the user will need to wait for confirmation from the admin once again.
   
@@ -256,7 +258,7 @@ Van's Transportation is a website designed for hassle-free bookings, allowing us
 
 [Django](https://www.djangoproject.com/) - Utilized as web framework.
 
-[Django Allauth](https://docs.allauth.org/en/latest/) - Utilized for account management functionalities:sign up, sign in and sign out proccesses.
+[Django Allauth](https://docs.allauth.org/en/latest/) - Utilized for account management functionalities: sign up, sign in and sign out processes.
 
 [gunicorn](https://pypi.org/project/gunicorn/) - A Python WSGI HTTP Server
 
@@ -287,6 +289,8 @@ Van's Transportation is a website designed for hassle-free bookings, allowing us
 [CI Python Linter](https://pep8ci.herokuapp.com/) - Utilized to validate the Python code. 
 
 ## Testing
+
+- Go to [TESTING.md](TESTING.md)
 
 ## Deployment
 
@@ -343,7 +347,56 @@ Step 2: Deploying an app to Heroku:
     - Deploy content through Heroku manually.
 
 
+## Bugs 
+### Unfixed Bugs
+
+- The current web URL extensions are causing repetition of names, which can create confusion and negatively impact search engine optimization. Although this issue has been identified, it cannot be addressed immediately due to time constraints. However, resolving this issue is relatively simple by adjusting the URL configuration of the apps to ensure consistency and clarity in naming conventions.
+
+  - ![url-repeating](assets/images/urlsrepeating.png)
+
+- In Gitpod's terminal, Python detected three issues related to the gitpod.yml extension. However, these issues do not affect the functionality of the project.
+
+  - ![problems-gitpod](assets/images/problems-gitpod.png)
+
+- While checking the HTML code via URI, the website encountered four errors related to the Summernote Editor. However, these issues do not affect the project's functionality.
+  
+  - ![landing-page](assets/images/landpage.png)
+
+### Fixed Bugs 
+
+- When I checked the Python code, most of it had to be split into more rows because it was longer than the limit of 79 characters.
+
+  - ![pythonecodelong](assets/images/longlane.png)
 
 
+## Finished Product
+
+|Page | Large Screen | Small Screen|
+| --- | --- |--- |
+|Home Page|![landingpagelg](assets/images/landingpagelg.png)     |![landingpage-ss](assets/images/landingpagess.png)    |
+|Make a Booking | ![makeabookingls](assets/images/vansbookingls.png)    |![makeabookingss](assets/images/vansbookingss.png)    |
+|View my Booking |![viewbookinglg](assets/images/viewbooklg.png)     |![viewbookingss](assets/images/viewbookss.png)    |
+|Contact Us   |![Contactls](assets/images/contactfinalls.png)     |![Contactss](assets/images/contactfinalss.png)    |
+|Edit Booking     |![editboockingls](assets/images/editfinallg.png)     |![editboockingss](assets/images/editfinalss.png)    |
+|Delete Boocking |![deletels](assets/images/deletels.png)     |![deletess](assets/images/deletess.png)    |
+|Sign Up     |![signupls](assets/images/signupls.png) |![signupss](assets/images/signupss.png)   |
+|Log In    |![signinls](assets/images/signinls.png)     |![signinss](assets/images/signinss.png)    |
+|Log out     |![logoutks](assets/images/logoutls.png)     |![logoutss](assets/images/logoutss.png)    |
 
 
+## Credit
+
+- Media
+  - [Pixabay](pixabay.com) - Image from logo website.
+  - [Pexels](https://www.pexels.com/) - Image for landing page footer.
+  - [Rabbits](https://www.rabbits.co.uk/) - Images for list of the vans from landing page.
+
+- Code
+  - Code Institute team for bits of advice
+
+
+## Acknowledgments
+
+- Marcel has provided valuable tutoring, offering guidance, feedback, and support, while also addressing key points discussed during our meetings.
+- My wife for taking the time to check the website and providing me with valuable feedback. Her input was truly helpful.
+- Code institute team for support and advice
