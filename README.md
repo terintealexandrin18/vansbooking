@@ -153,7 +153,7 @@ Van's Transportation is a website designed for hassle-free bookings, allowing us
         - ![footer home page](assets/images/footer-homepagess.png)
 
 - Make a Booking page
-  - Booking a service is a pivotal feature of the website, facilitating the process of scheduling appointments. Users are required to fill out all fields in the form, including their phone number, desired service, booking date, and additional comments. The comments section allows users to provide specific details such as their address, type of waste collection, or preferences regarding van pick-up or drop-off locations. This comprehensive form ensures that users can provide all necessary information to streamline the booking process effectively.
+  - Booking a service is a pivotal feature of the website, facilitating the process of scheduling appointments. Users are required to fill out all fields in the form, including their phone number, desired service, booking date, and additional comments. The comments section allows users to provide specific details such as their address, type of waste collection, or preferences regarding van pick-up or drop-off locations. This comprehensive form ensures that users can provide all necessary information to streamline the booking process effectively. Need to be log in to be able to make a booking.
 
     - Larger Screen sizes:
       - ![make booking large screens](assets/images/makebookingls.png)
@@ -175,7 +175,11 @@ Van's Transportation is a website designed for hassle-free bookings, allowing us
       - ![slot not available msg small screens](assets/images/booking_slotnotavailable_ss.png)
 
 - Your Booking page
-  - On the page, users can review all their bookings along with their current statuses. Pending bookings status are highlighted in transparent orange, confirmed bookings statis in transparent green, and canceled bookings status in transparent red. Additionally, users have the option to update or delete their bookings, providing them with flexibility and control over their scheduled services. This feature enhances user experience by offering transparency, clarity, and convenient management of booking statuses.
+  - Users can view all of their previous bookings and their current statuses by accessing the relevant page on the website. To view this information, users must be logged in. Pending bookings will be highlighted in transparent orange, confirmed bookings in transparent green, and canceled bookings in transparent red.
+
+  - Additionally, users have the option to modify or cancel their bookings, which gives them greater flexibility and control over their scheduled services. If a confirmed booking is modified, the user will need to wait for confirmation from the admin once again.
+  
+  - This feature enhances user experience by offering transparency, clarity, and convenient management of booking statuses.
 
     - Larger Screen sizes:
       - ![view bookings large screens](assets/images/view_booking_ls.png)
