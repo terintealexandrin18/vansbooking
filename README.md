@@ -9,30 +9,28 @@ Van's Transportation is a website designed for hassle-free bookings, allowing us
 ## Table of Contents
 1. - User Experience (UX)
     - Strategy
-        - Project Goals
-        - User Goals
-        - User Stories
-        - Track User Stories - Kanban Board
+      - Project Goals
+      - User Goals
+      - User Stories
+      - Track User Stories - Kanban Board
     - Surface
-        - Color Scheme
-        - Typography
+      - Color Scheme
+      - Typography
 2. - Features
-        - Existing Features 
-        - Future Features
+      - Existing Features 
+      - Future Features
 3. - Technologies Used
-    - Languages Used
-    - Libraries and Frameworks
-    - Packages / Dependecies Installed
-    - Database Management
-    - Tools and Programs
+      - Languages Used
+      - Frameworks, Libraries & Programs
 4. - Testing
         - Go to testing.md (to make it..)
-5. - Deployment
-6. - Finished Product
-7. - Credit
-8. - Bugs
+5. - Bugs
         - Unfixed Bugs
         - Fixed Bugs
+6. - Deployment
+7. - Finished Product
+8. - Credit
+
 9. Acknowledgement
 
 ## 1. - User Experience (UX)
@@ -97,8 +95,8 @@ Van's Transportation is a website designed for hassle-free bookings, allowing us
 
 - To maintain visual consistency throughout the site, the fonts are adjusted dynamically with media queries to ensure optimal readability across various screen sizes. This means that font sizes will adapt to ensure the best reading experience on any device.
 
-### Features
-## Existing Features 
+## Features
+### Existing Features 
 - Logo
   - The logo, featuring the title "Van's Transportation" alongside a small van icon, serves the dual purpose of clearly communicating the page's content and functionality to users, while also providing a consistent link to the home page visible across all screen sizes on the navigation bar.
 
@@ -197,11 +195,151 @@ Van's Transportation is a website designed for hassle-free bookings, allowing us
       - ![edit, delete msg lg](assets/images/e_d_ls.png)
     - Small Screen sizes:
       - ![edit, delete msg sc](assets/images/e_d_lss.png)
+- Account page
+  - Sign up : Allow users to create an account on the website.
 
-- Contact us page
+    - Larger Screen sizes:
+      - ![sign up ls](assets/images/signup_ls.png)
+    - Small Screen sizes:
+      - ![sign up ss](assets/images/signup_ss.png)
+
+  - Log In: Allows users to access their accounts, enabling them to make, view, edit, and delete bookings.
+    
+    - Large & Small screen sizes: 
+      - ![sign in](assets/images/signin.png)
+
+  - Sign Out: Enables users to securely log out from their accounts.
+    - Large & Small screen sizes: 
+      - ![sign out](<assets/images/sign out.png>)
+
+  - Sign Up, Log In, and Sign Out functionalities include notification messages to provide users with feedback and confirmation of their actions.
+    - Large & Small screen sizes:
+      - ![sign msg](assets/images/sign.png)
+
+
+- Contact us page 
+
   - The "Contact Us" page features a detailed form that requires users to fill in all fields before submission. In addition, multiple contact channels are provided, such as phone, email, and in-person visits. These elements are aligned parallel to each other on large screens, with the map displayed underneath. On smaller screens, they are arranged in a single column, ensuring optimal layout and accessibility across devices. This design ensures that users have various options to reach us and access our contact information conveniently.
 
     - Larger Screen sizes:
       - ![contact us ls](assets/images/contactus_ls.png)
     - Small Screen sizes:
       - ![contact us ss](assets/images/contactus_ss.png)
+
+### Future Features
+ - Enable users to edit their details.
+ - Enhance defensive programming techniques for improved security.
+ - Develop a separate interface for admin.
+ - Expand user account functionality to include additional details such as full name and address.
+
+### Languages Used
+
+[HTML5](https://en.wikipedia.org/wiki/HTML)
+
+[CSS3](https://en.wikipedia.org/wiki/CSS)
+
+[JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+
+[Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+### Frameworks, Libraries & Programs
+
+[Fontawesome](https://fontawesome.com/) - Utilized to incorporate icons into the landing page, enhancing visual appeal and user experience. 
+
+[Google Fonts](https://fonts.google.com/) - Utilized to import fonts into the CSS file, ensuring consistency in typography across all sections of the website.
+
+[Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - Utilized throughout the website to help with styling and responsiveness.
+
+[Django](https://www.djangoproject.com/) - Utilized as web framework.
+
+[Django Allauth](https://docs.allauth.org/en/latest/) - Utilized for account management functionalities:sign up, sign in and sign out proccesses.
+
+[gunicorn](https://pypi.org/project/gunicorn/) - A Python WSGI HTTP Server
+
+[dj_databsae_url](https://pypi.org/project/dj-database-url/) - Allowed to utilise the DATABASE_URL variable.
+
+[psycopg2](https://pypi.org/project/psycopg2/) - Utilized to facilitate connections between the application and a PostgreSQL database
+
+[Cloudinary ](https://cloudinary.com/) - Utilized for cloud-based images management services, enabling seamless storage, optimization, and delivery of images for the website.
+
+[PostgreSQL](https://www.postgresql.org/) - Utilized as a database management system.
+
+[ElephantSQL](https://www.elephantsql.com/) - PostgreSQL database hosting service.
+
+[Gitpod](https://www.gitpod.io/) - Utilized for writing code, committing changes, and pushing to GitHub.
+
+[GitHub](https://github.com/) - Utilized to store the project repository and managed user story through Kanban board.
+
+[Heroku](https://www.heroku.com/) - Utilized to deploy the project. 
+
+[DevTools](https://developer.chrome.com/docs/devtools/) - Utilized for troubleshooting, testing features, responsiveness and styling.
+
+[W3C Markup Validator](https://validator.w3.org/) - Utilized to validate the HTML code.
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - Utilized to validate the CSS.
+
+[JSHint](https://jshint.com/) - Utilized to validate the JavaScript code.
+
+[CI Python Linter](https://pep8ci.herokuapp.com/) - Utilized to validate the Python code. 
+
+## Testing
+
+## Deployment
+
+Step 1: Installing Dependencies:
+
+1 - Install Django, gunicorn, and supporting libraries: pip3 install 'django<4' gunicorn dj_database_url==0.5.0 psycopg2 dj3-cloudinary-storage
+
+2 - Create a requirements file: pip3 freeze --local > requirements.txt
+
+3 - Create project: django-admin startproject vans .
+
+4 - Create App: 
+
+    - python3 manage.py startapp homepage
+
+    - python3 manage.py startapp allbookings
+
+    - python3 manage.py startapp viewthebooking
+
+    - python3 manage.py startapp contact
+
+5 - Add to installed apps in setting.py(Save file)
+
+6 - Migrate changes python3 manage.py migrate
+
+7 - Run Server to Test python3 manage.py runserver
+
+Step 2: Deploying an app to Heroku:
+
+1 - Create a new external Database:
+
+    - Go to ElephantSQL.com, create a new instance, and copy the URL.
+
+2 - Heroku app setup:
+
+    - Create a new Heroku app and attach the ElephantSQL database.
+
+    - Set config vars for DATABASE_URL and SECRET_KEY.
+
+3 - Prepare environment and settings.py file:
+
+    - Create env.py in Gitpod and set environment variables.
+
+    - Add Cloudinary settings to settings.py.
+
+    - Update ALLOWED_HOSTS and create a Procfile.
+
+4 - Deploy
+
+    - Save files, make migrations, and commit changes.
+
+    - Remove COLLECT_STATIC FILES from Heroku config vars.
+
+    - Deploy content through Heroku manually.
+
+
+
+
+
+
