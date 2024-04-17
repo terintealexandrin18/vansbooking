@@ -9,29 +9,29 @@
 [Github Repository] (https://github.com/terintealexandrin18/vansbooking)
 
 ## Table of Contents
-1. - User Experience (UX)
-    - Strategy
-      - Project Goals
-      - User Goals
-      - User Stories
-      - Track User Stories - Kanban Board
-    - Surface
-      - Color Scheme
-      - Typography
-2. - Features
-      - Existing Features 
-      - Future Features
-3. - Technologies Used
-      - Languages Used
-      - Frameworks, Libraries & Programs
-4. - Testing
+1. - [User Experience UX](#User-Experience-UX)
+    - [Strategy](#Strategy)
+      - [Project Goals](#project-goals)
+      - [User Goals](#user-goals)
+      - [User Stories](#user-goals)
+      - [Track User Stories - Kanban Board](#track-user-stories---kanban-board)
+    - [Surface](#surface)
+      - [Color Scheme](#color-scheme)
+      - [Typography](#typography)
+2. - [Features](#features)
+      - [Existing Features](#existing-features) 
+      - [Future Features](#future-features)
+3. - [Technologies Used](#technologies-used)
+      - [Languages Used](#languages-used)
+      - [Frameworks, Libraries & Programs](#frameworks-libraries--programs)
+4. - [Testing](#testing)
         - Go to [TESTING.md](TESTING.md)
-5. - Bugs
-        - Unfixed Bugs
-        - Fixed Bugs
-6. - Deployment
-7. - Finished Product
-8. - Credit
+5. - [Bugs](#bugs)
+        - [Unfixed Bugs](#unfixed-bugs)
+        - [Fixed Bugs](#fixed-bugs)
+6. - [Deployment](#deployment)
+7. - [Finished Product](#finished-product)
+8. - [Credit](#credit)
 
 9. Acknowledgement
 
@@ -231,7 +231,7 @@
       - ![contact us ls](assets/images/contactus_ls.png)
     - Small Screen sizes:
       - ![contact us ss](assets/images/contactus_ss.png)
-
+## Technologies Used
 ### Future Features
  - Enable users to edit their details.
  - Enhance defensive programming techniques for improved security.

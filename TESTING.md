@@ -1,13 +1,13 @@
 # Testing
 
-- Testing User Stories
-- HTML validation
-- JavaScript validation
-- Python validation
-- CSS validation
-- Automatic test validation
-- Manual Testing 
-- Additional 
+## [Testing User Stories](#testing-user-stories)
+## [HTML validation](#html-validation)
+## [JavaScript validation](#javascript-validation)
+## [Python validation](#python-validation)
+## [CSS validation](#css-validation)
+## [Automatic test validation](#automatic-test-validation)
+## [Manual Testing](#manual-testing) 
+## [Additional](#additional) 
 
 ## Testing User Stories
  1 As a Site User, I want to register a new account so that I can make online bookings.
@@ -197,7 +197,11 @@
 |Landing Page  | Pass  | Add content from admin panel.   |  
 | Summernote editor  | Pass | Content visible on home page  | 
 
+## Additional
 
 - It appears that there is a vulnerability in the system. If I log in as a different user, click on "edit booking", copy the URL link, log out, and log back in as a different user, pasting the URL link will bring up the same editing page. However, if I make any changes to the booking and try to update it, it will not save and will throw an error. The system should not allow users to edit bookings without proper validation of user permissions. Therefore, need more defensive programming and validation of user permissions before allowing any modification to the booking.
 
   - ![error-updating](assets/images/errorupdatingbooking.png)
+
+- The app "BOOKINGS" been renamed to "HOMEPAGE".
+- The app I named them wrong, but was to late to delete and create new one because I will lose all the migrations.
