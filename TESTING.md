@@ -92,11 +92,11 @@
 
 |Page | Result | Image|
 |-----|--------|------|
-| CSS sheet    | Pass     |![Css validation](assets/images/CSS .png) |
+| CSS sheet    | Pass     |![Css-validation](assets/images/CSS .png) |
 
 ## Automatic test validation
 |Page | Result | Image|
-| Forms and View python    | pass     |![automatic test](assets/images/automatic_test.png) |
+| Forms and View python    | pass     |![automatic-test](assets/images/automatic_test.png) |
 
 ## Manual Testing
 
@@ -153,22 +153,26 @@
 | Map |Pass  | Shows the location given  |  
 
 - Sign Us page
+
 |Item Testest | Result | Comments |
 |-------------|--------|----------|
 |Submit form |Pass  | Need to fill up the mandatory fields  |  
 | Confirmation message  |Pass  | Confirmation message appear when the account was created  | 
 
 - Sign in page
+
 |Item Testest | Result | Comments |
 |-------------|--------|----------|
 |  Confirmation message  |Pass  |Confirmation message appear when logged in  |  
 
 - Log out page
+
 |Item Testest | Result | Comments |
 |-------------|--------|----------|
 |  Confirmation message  |Pass  |Confirmation message appear when logged out  |  
 
 - Admin Panel page
+
 |Item Testest | Result | Comments |
 |-------------|--------|----------|
 |Recive Bookings  |Pass  | ![admin-booking](assets/images/admin panel.png)  | 
@@ -178,5 +182,6 @@
 | Summernote editor  | Pass | Content visible on home page  | 
 
 
-- It seems like there's a vulnerability in the system. If I log in under a different user - click on edit the booking - copy the url link - log out - log in under a different user - paste the url link in the browser it will bring up the same edit booking. If I make some changing to the booking and try to update the booking it  will not save. Will throw out an error. It should now allow to see editng the booking. Need more defensive programing; validation of user permissions before allowing any modification to the booking.
-![error-updating](assets/images/error updating booking.png)
+- It appears that there is a vulnerability in the system. If I log in as a different user, click on "edit booking", copy the URL link, log out, and log back in as a different user, pasting the URL link will bring up the same editing page. However, if I make any changes to the booking and try to update it, it will not save and will throw an error. The system should not allow users to edit bookings without proper validation of user permissions. Therefore, need more defensive programing and validation of user permissions before allowing any modification to the booking.
+
+  - ![error-updating](assets/images/error updating booking.png)
