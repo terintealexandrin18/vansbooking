@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %} 
+{% load crispy_forms_tags %}
 {% block content %}
 {% load static %}
 
@@ -12,15 +12,26 @@
             <div class="form-container">
                 <form method="post">
                     {% csrf_token %}
-                                      
-                    <!-- Render form using crispy forms -->
                     
-                    {{ booking_form|crispy }}                
+                    <!-- Render form using crispy forms -->
+                    {{ booking_form|crispy }}
+                    
                     <button type="submit" class="btn lgbutton">Submit</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Custom JavaScript to restrict past dates -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var dateInput = document.querySelector("input[type='date']");
+        if (dateInput) {
+            var today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+        }
+    });
+</script>
 
 {% endblock content %}

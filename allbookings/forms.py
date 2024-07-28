@@ -1,6 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from .models import BookingRequest
+from datetime import date
 
 class BookingForm(forms.ModelForm):
     """
@@ -20,11 +21,17 @@ class BookingForm(forms.ModelForm):
             raise ValidationError('Enter a valid 11-digit contact number.')
         return contact_number
 
+    def clean_date(self):
+        booking_date = self.cleaned_data.get('date')
+        if booking_date < date.today():
+            raise ValidationError('Enter a date that is not in the past.')
+        return booking_date
+
     class Meta:
         model = BookingRequest
         fields = ['contact_number', 'date', 'time_slot', 'choose_a_services', 'comments']
         widgets = {
             'contact_number': forms.TextInput(attrs={'placeholder': '01234567891'}),
-            'date': forms.DateInput(attrs={'placeholder': 'YYYY-MM-DD'}),
+            'date': forms.DateInput(attrs={'type': 'date'}),
             'comments': forms.Textarea(attrs={'placeholder': 'Please provide the additional requirements.'}),
         }
