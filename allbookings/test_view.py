@@ -3,7 +3,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from .models import BookingRequest
 from .forms import BookingForm
-
+from datetime import datetime, timedelta
 
 class MakeBookingViewTest(TestCase):
     @classmethod
@@ -25,22 +25,26 @@ class MakeBookingViewTest(TestCase):
         # Test POST request with a valid form submission for making a booking
         client = Client()
         client.force_login(self.user)
+        future_date = (datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d')
         post_data = {
             'contact_number': '01234567890',
-            'date': '2024-04-13',
+            'date': future_date,
             'time_slot': '7:00 - 8:30',
             'choose_a_services': 'Waste Collection',
             'comments': 'Test comments'
         }
         response = client.post(reverse('make_the_bookings'), data=post_data)
+        
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('view-the-booking'))
-        self.assertTrue(BookingRequest.objects.filter(user=self.user,
-                        contact_number='01234567890', date='2024-04-13',
-                        time_slot='7:00 - 8:30',
-                        choose_a_services='Waste Collection',
-                        comments='Test comments').exists())
-
+        self.assertTrue(BookingRequest.objects.filter(
+            user=self.user,
+            contact_number='01234567890',
+            date=future_date,
+            time_slot='7:00 - 8:30',
+            choose_a_services='Waste Collection',
+            comments='Test comments'
+        ).exists())
 
 class BookingEditViewTest(TestCase):
     @classmethod
