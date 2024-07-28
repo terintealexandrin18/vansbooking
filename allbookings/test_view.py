@@ -26,7 +26,7 @@ class MakeBookingViewTest(TestCase):
         client = Client()
         client.force_login(self.user)
         post_data = {
-            'contact_number': '123456789',
+            'contact_number': '01234567890',
             'date': '2024-04-13',
             'time_slot': '7:00 - 8:30',
             'choose_a_services': 'Waste Collection',
@@ -36,7 +36,7 @@ class MakeBookingViewTest(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('view-the-booking'))
         self.assertTrue(BookingRequest.objects.filter(user=self.user,
-                        contact_number='123456789', date='2024-04-13',
+                        contact_number='01234567890', date='2024-04-13',
                         time_slot='7:00 - 8:30',
                         choose_a_services='Waste Collection',
                         comments='Test comments').exists())
@@ -50,7 +50,7 @@ class BookingEditViewTest(TestCase):
                                             password='12345')
         cls.booking_request = BookingRequest.objects.create(
             user=cls.user,
-            contact_number='123456789',
+            contact_number='01234567890',
             date='2024-04-13',
             time_slot='7:00 - 8:30',
             choose_a_services='Waste Collection',
@@ -77,7 +77,8 @@ class BookingDeleteViewTest(TestCase):
         cls.user = User.objects.create_user(username='test11',
                                             password='12345')
         cls.booking_request = BookingRequest.objects.create(
-            user=cls.user, contact_number='123456789', date='2024-04-13',
+            user=cls.user, contact_number='01234567890',
+            date='2024-04-13',
             time_slot='7:00 - 8:30', choose_a_services='Waste Collection',
             comments='Test comments'
             )
