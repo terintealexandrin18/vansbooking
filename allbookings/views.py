@@ -2,23 +2,11 @@ from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from .models import BookingRequest
-
 from django.contrib.auth.decorators import login_required
 from .forms import BookingForm
 
-
 @login_required
 def make_booking(request):
-    """
-    Renders the form to make a booking.
-
-    **Context**
-    ``booking_form``
-        An instance of :form:`allbookings.BookingForm`.
-
-    **Template**
-    :template:`allbookingapp/make_the_bookings.html`
-    """
     if request.method == "POST":
         booking_form = BookingForm(data=request.POST)
         if booking_form.is_valid():
@@ -49,21 +37,8 @@ def make_booking(request):
         {"booking_form": booking_form},
     )
 
-
 @login_required
 def booking_edit(request, booking_id):
-    """
-    Renders the page for editing a booking.
-    Gets the specific :model:`allbookings.BookingRequest`
-    instance by booking_id.
-
-    **Context**
-    ``booking_form``
-        An instance of :form:`allbookings.BookingForm`.
-
-    **Template**
-    :template:`allbookingapp/edit_the_bookings.html`
-    """
     booking = get_object_or_404(BookingRequest, pk=booking_id)
     booking_form = BookingForm(request.POST or None, instance=booking)
 
@@ -97,21 +72,8 @@ def booking_edit(request, booking_id):
         {"booking_form": booking_form},
     )
 
-
 @login_required
 def booking_delete(request, booking_id):
-    """
-    Renders the confirmation page for deleting a booking.
-    Gets the specific :model:`allbookings.BookingRequest`
-    instance by booking_id.
-
-    **Context**
-    ``booking``
-        An instance of :model:`allbookings.BookingRequest`.
-
-    **Template**
-    :template:`allbookingapp/delete_the_booking.html`
-    """
     booking = get_object_or_404(BookingRequest, pk=booking_id)
 
     if booking.user == request.user:

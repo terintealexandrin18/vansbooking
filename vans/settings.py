@@ -26,14 +26,14 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!4y6_-6*ea8zp4%buy4_@k+fn_(8x_th0il20*-t@3^1jy4o*f'
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY", '')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+#DEBUG = False
 
-ALLOWED_HOSTS = ['8000-terintealex-vansbooking-gqrv53g8qcr.ws-eu110.gitpod.io','8000-terintealex-vansbooking-gqrv53g8qcr.ws-eu110.gitpod.io' '8000-terintealex-vansbooking-ed8rmfjfmpt.ws-eu110.gitpod.io', '.herokuapp.com']
+ALLOWED_HOSTS = ['8000-terintealex-vansbooking-x488uxm0yzv.ws.codeinstitute-ide.net', '.herokuapp.com']
 
 
 # Application definition
@@ -112,22 +112,17 @@ WSGI_APPLICATION = 'vans.wsgi.application'
 #}
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL")),
 }
 
 if 'test' in sys.argv:
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.codeanyapp.com",
     "https://*.herokuapp.com",
-    "https://*.gitpod.io",
-    "https://8000-terintealex-vansbooking-ed8rmfjfmpt.ws-eu108.gitpod.io",
-    "https://8000-terintealex-vansbooking-ed8rmfjfmpt.ws-eu110.gitpod.io/",
-    "https://vansbooking-37cc026955c5.herokuapp.com/"
-    
-
-]
+    "https://vansbooking-37cc026955c5.herokuapp.com/",
+    "https://8000-terintealex-vansbooking-x488uxm0yzv.ws.codeinstitute-ide.net"
+    ]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
