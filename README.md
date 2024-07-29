@@ -14,6 +14,7 @@
       - [Project Goals](#project-goals)
       - [User Goals](#user-goals)
       - [User Stories](#user-goals)
+      - [Agile Approach]
       - [Track User Stories - Kanban Board](#track-user-stories---kanban-board)
     - [Surface](#surface)
       - [Color Scheme](#color-scheme)
@@ -58,6 +59,96 @@
 - As a Site User, I want to edit a booking by clicking the edit button to make changes without contacting support.
 - As a Site Admin, I want to view, approve, or delete bookings to effectively manage bookings and prevent double bookings.
 - As a Site User, I want easy access to the contact page to discuss additional booking details and services.
+
+### Strategy Table
+
+| Opportunity / Problem                            | Importance | Viability / Feasibility |
+|--------------------------------------------------|------------|-------------------------|
+| Responsive design                                | 5          | 5                       |
+| Account registration                             | 5          | 5                       |
+| Ability to log in                                | 5          | 5                       |
+| Ability to fill in user profile                  | 5          | 5                       |
+| Create, edit and delete bookings                 | 5          | 4                       |
+| View booking status                              | 5          | 4                       |
+| Access contact page                              | 4          | 5                       |
+| See available time slots                         | 4          | 5                       |
+| Select service from drop-down list               | 4          | 5                       |
+| Delete bookings                                  | 4          | 4                       |
+| Edit bookings                                    | 4          | 4                       |
+| Manage bookings (admin)                          | 4          | 4                       |
+| Total                                            | 54         | 54                      |
+
+### User Stories
+1. User Story 1: As a Site User, I want to register a new account so that I can make online bookings.
+  - Acceptance Criteria:
+    - User can create a new account with a unique username and password.
+
+2. User Story 2: As a Site User, I want to log in so that I can make the booking.
+  - Acceptance Criteria:
+    - User can log in with registered credentials.
+
+3. User Story 3: As a Site User, I want to access the contact page so that I can discuss additional information about booking and services.
+  - Acceptance Criteria:
+    - User can navigate to the contact page from the main menu.
+    - Contact form is available for user inquiries.
+
+4. User Story 4: As a Site User, I want to view the booking made so that I can check the booking confirmation status, whether pending or confirmed.
+  - Acceptance Criteria:
+    - User can view a list of bookings in their profile.
+    - Booking status is clearly indicated (pending, confirmed).
+
+5. User Story 5: As a Site User, I want to access the home page so that I can see what services they offer and information about the company.
+  - Acceptance Criteria:
+    - Home page displays an overview of services.
+    - Information about the company is available on the home page.
+
+6. User Story 6: As a Site User, I want to add additional information about the service I need so that the company will be aware.
+  - Acceptance Criteria:
+    - Additional information field is available in the booking form.
+    - Users can provide detailed requirements for the service.
+
+7. User Story 7: As a Site User, I want to see the available time slots so that I can book the desired slot.
+  - Acceptance Criteria:
+    - Available time slots are displayed in the booking form.
+    - User can select a preferred time slot from the available options.
+
+8. User Story 8: As a Site User, I want to make a booking by selecting the service I need from the drop-down list so that I don’t need to call or email to provide all the relevant information.
+  - Acceptance Criteria:
+    - Service selection drop-down is available in the booking form.
+    - User can choose from a list of predefined services.
+
+9. User Story 9: As a Site User, I want to delete a booking by clicking on a button for easy management.
+  - Acceptance Criteria:
+    - Delete button is available for each booking.
+    - User receives a confirmation prompt before deletion.
+
+10. User Story 10: As a Site User, I want to edit a booking by clicking the edit button so that I don’t need to contact them for any changes that I want to make.
+  - Acceptance Criteria:
+    - Edit button is available for each booking.
+    - User can update booking details and save changes.
+
+11. User Story 11: As a Site Admin, I want to view, approve, or delete a booking so that I can manage all bookings and avoid double bookings. The user details should be visible to me in the bookings.
+  - Acceptance Criteria:
+    - Admin can access a list of all bookings.
+    - Admin can approve, reject, or delete bookings.
+    - Admin can see the username associated with each booking.
+
+### Agile Approach
+
+We used an Agile approach to manage and track the development of this project. The project was divided into several sprints, with each sprint focusing on delivering a specific set of features.
+
+- Sprint 1: Implement Basic Booking Feature
+  - Tasks:
+    - Set up project structure
+    - Create booking model
+    - Implement booking form
+  - Milestone: Completion of basic booking functionality.
+
+- Sprint 2: Add Validation
+  - Tasks:
+    - Add date validation to prevent past bookings
+  - Milestone: Validation system in place.
+
 
 ### Track User Stories - Kanban Board
 - Throughout the project, I utilized the GitHub Kanban board extensively to manage user stories effectively. This approach facilitated the prioritization of tasks and provided a clear visualization of the project's progress at every stage.
