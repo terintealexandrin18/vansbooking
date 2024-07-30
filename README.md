@@ -16,6 +16,7 @@ Van's Transportation is a website designed for hassle-free bookings, allowing us
      - [User Stories](#user-goals)
      - [Agile Approach](#agile-approach)
      - [Track User Stories - Kanban Board](#track-user-stories---kanban-board)
+     - [Database Model](#database-model)
    - [Surface](#surface)
      - [Color Scheme](#color-scheme)
      - [Typography](#typography)
@@ -168,8 +169,15 @@ We used an Agile approach to manage and track the development of this project. T
   ![kanban board](assets/images/kanbanboard1a.png)
 
 - Week 3
+
   - "Edit user details" user story will be implemented in Phase two.
+
   ![kanban board](assets/images/kanbanboard.png)
+
+### Database Model
+The database model has been designed using dbdiagram. The type of database being used for the project is a relational database being managed using PostgreSQL.
+
+![database](assets/images/diagram.png)
 
 ## Surface
 
@@ -203,8 +211,11 @@ We used an Agile approach to manage and track the development of this project. T
 - **Navigation Bar**: The navigation bar remains fixed at the top of large screens, allowing seamless navigation between pages: Home, Make a Booking, View my Booking, Contact Us, and Account. Within the Account section, users can access a dropdown for logging in or registering. At the end of the navigation tabs, the username is displayed if logged in, or "You are not logged in" if not. On small screens, the navigation bar is hidden to improve content accessibility and can be accessed through a dropdown menu activated by clicking the three horizontal lines symbol.
 
   - Larger Screen sizes:
+
     ![nav bar large screen](assets/images/navbar-largescreen.png)
+
   - Small Screens sizes:
+
     ![nav bar small screen](assets/images/navbar-smallscreen.png)
 
 - **Landing Page Introduction**: The landing page serves to introduce visitors to the company, providing an overview of the services offered, and highlighting the key benefits of choosing Van's Transportation. It encourages visitors to explore further and take action by booking a service.
@@ -214,50 +225,71 @@ We used an Agile approach to manage and track the development of this project. T
 - **Services Provided**: The service list feature informs visitors about the various services offered by the company. Each service title is accompanied by its own icon, and the tiles function as links to the booking page. Below the services are two buttons—one for booking and another for contacting the company. 
 
   - Larger Screen sizes:
+
     ![services larger screen](assets/images/servicesls.png)
+
   - Small Screen sizes:
+
     ![services small screen](assets/images/servicesss.png)
 
 - **List of Vans**: The list of vans feature provides users with valuable information by showcasing all types of vehicles available, helping them choose the right van for their service needs. Additionally, the date of the vehicles' last update is displayed at the bottom of images, ensuring users have access to the most current information.
   
   - Larger Screen sizes:
+
     ![vans large screens](assets/images/vansls.png)
+
   - Small Screen sizes:
+
     ![vans small screens](assets/images/vansss.png)
 
 - **Footer**: The footer includes links to the company's social media profiles and opening hours, offering users valuable connectivity to stay updated on news and promotions while providing essential information for planning visits or contacting during operational hours.
 
   - Larger Screen sizes:
     - All pages footer
+
       ![footer all pages](assets/images/footer-otherpagesls.png)
+
     - Landing page footer
+
       ![footer home page](assets/images/footer-homepagels.png)
   
   - Small Screen sizes:
     - All pages footer
+
       ![footer all pages](assets/images/footer-otherpagesss.png)
+
     - Landing page footer
+
       ![footer home page](assets/images/footer-homepagess.png)
 
 - **Make a Booking page**: Booking a service is a pivotal feature of the website, facilitating the process of scheduling appointments. Users are required to fill out all fields in the form, including their phone number, desired service, booking date, and additional comments. The comments section allows users to provide specific details such as their address, type of waste collection, or preferences regarding van pick-up or drop-off locations. This comprehensive form ensures that users can provide all necessary information to streamline the booking process effectively. Need to be log in to be able to make a booking.
 
   - Larger Screen sizes:
+
     ![make booking large screens](assets/images/makebookingls.png)
+
   - Small Screen sizes:
+
     ![make booking small screens](assets/images/makebookingss.png)
 
   - After making a booking, the user receives the message "Your booking request has been submitted successfully," providing reassurance and confirmation that their request has been received and processed by the system. This message adds value to the user by instilling confidence in the booking process, offering peace of mind that their service request has been successfully communicated to the company, and setting clear expectations for next steps in the service process. Additionally, the user is automatically redirected to the "View My Booking" page, allowing them to conveniently track the status of their booking and access any relevant details or updates.
   
   - Larger Screen sizes:
+
     ![booking msg large screens](assets/images/booking_confirmation_msglg.png)
+
   - Small Screen sizes:
+
     ![booking msg small screens](assets/images/booking_confirmation_msgss.png)
 
   - If a user attempts to book a time slot that has already been booked by someone else, they will receive an error message stating: "Sorry, but the time slot you selected is no longer available. Please choose a different time slot that suits your schedule." This prompt is crucial as it promptly informs the user that the desired time slot is unavailable, allowing them to swiftly adjust their booking preferences without further delay.
 
   - Larger Screen sizes:
+
     ![slot not available msg large screens](assets/images/booking_slotnotavailable_ls.png)
+
   - Small Screen sizes:
+
     ![slot not available msg small screens](assets/images/booking_slotnotavailable_ss.png)
 
 - **Your Booking page**: Users can view all of their previous bookings and their current statuses by accessing the relevant page on the website. To view this information, users must be logged in. Pending bookings will be highlighted in transparent orange, confirmed bookings in transparent green, and cancelled bookings in transparent red.
@@ -267,52 +299,70 @@ We used an Agile approach to manage and track the development of this project. T
   - This feature enhances user experience by offering transparency, clarity, and convenient management of booking statuses.
 
   - Larger Screen sizes:
+
     ![view bookings large screens](assets/images/view_booking_ls.png)
+
   - Small Screen sizes:
+
     ![view booking small screens](assets/images/view_booking_ss.png)
 
   - If a user attempts to edit a booking and the desired time slot is already booked, they will receive an error message notifying them of the conflict. This message serves to alert the user that the requested time slot is unavailable for editing, prompting them to select a different time slot.
 
   - Larger Screen sizes:
+
     ![edit booking error lg](assets/images/edit_booking_error_lg.png)
+
   - Small Screen sizes:
+
     ![edit booking error sc](assets/images/edit_booking_error_ss.png)
     
   - Upon updating a booking, the user receives a confirmation message. To delete a booking, the user's details are shown, and they confirm deletion by pressing the delete button again or the back button, redirecting them to the view bookings page. These confirmation messages and security measures ensure a smooth and secure user experience when managing bookings on the platform.
 
   - Larger Screen sizes:
+
     ![edit, delete msg lg](assets/images/e_d_ls.png)
+
   - Small Screen sizes:
+
     ![edit, delete msg sc](assets/images/e_d_lss.png)
 
 - **Account page**
   - **Sign up**: Allow users to create an account on the website.
 
   - Larger Screen sizes:
+
     ![sign up ls](assets/images/signup_ls.png)
+
   - Small Screen sizes:
+
     ![sign up ss](assets/images/signup_ss.png)
 
   - **Log In**: Allows users to access their accounts, enabling them to make, view, edit, and delete bookings.
     
   - Large & Small screen sizes: 
+
     ![sign in](assets/images/signin.png)
 
   - **Sign Out**: Enables users to securely log out from their accounts.
     
   - Large & Small screen sizes: 
-    ![sign out](assets/images/sign out.png)
+
+    ![sign out](assets/images/sign_out.png)
 
   - **Sign Up, Log In, and Sign Out functionalities** include notification messages to provide users with feedback and confirmation of their actions.
     
   - Large & Small screen sizes:
+
     ![sign msg](assets/images/sign.png)
 
 - **Contact us page**: The "Contact Us" page features a detailed form that requires users to fill in all fields before submission. In addition, multiple contact channels are provided, such as phone, email, and in-person visits. These elements are aligned parallel to each other on large screens, with the map displayed underneath. On smaller screens, they are arranged in a single column, ensuring optimal layout and accessibility across devices. This design ensures that users have various options to reach us and access our contact information conveniently.
 
   - Larger Screen sizes:
+
     ![contact us ls](assets/images/contactus_ls.png)
+
   - Small Screen sizes:
+
     ![contact us ss](assets/images/contactus_ss.png)
 
 ## Technologies Used
