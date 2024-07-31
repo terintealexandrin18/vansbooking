@@ -68,13 +68,14 @@
 | Allbookings - Admin    | Pass    |![ Allbookings - Admin ](assets/images/allbookings_admin.png) |
 | Allbookings - Form    | Pass     |![ Allbookings - Form ](assets/images/allbookings_forms.png) |
 | Allbookings - Models    | Pass     |![Allbookings - Models](assets/images/allbookings_models.png) |
-| Allbookings - Test Views    |Pass     |![Allbookings - Test Views](assets/images/allbookings_test_view.png) |
+| Allbookings - Test Forms    |Pass     |![Allbookings - Test Forms](assets/images/allbookings_test_forms.png) |
+| Allbookings - Test Views    |Pass     |![Allbookings - Test Views](assets/images/allbookings_test_views.png) |
 | Allbookings - URLS    |Pass     |![Allbookings - URLS](assets/images/allbookings_urls.png) |
-| Allbooking - Views    |Pass     |![Allbooking - Views](assets/images/allbookings_views.png) |
+| Allbooking - Views    |Pass     |![Allbooking - Views](assets/images/allbookings_views1.png) |
 | Contact - Admin    |Pass     |![Contact - Admin](assets/images/contact_admin.png) |
 | Contact - Forms    |Pass     |![Contact - Forms](assets/images/contact_forms.png) |
-| Contact - Test Forms    |Pass     |![Contact - Test Forms](assets/images/contact_test_forms.png) |
-| Contact - Test Views    |Pass     |![Contact - Test Views](assets/images/contact_test_view.png) |
+| Contact - Test Forms    |Pass     |![Contact - Test Forms](assets/images/contact_tests_forms.png) |
+| Contact - Test Views    |Pass     |![Contact - Test Views](assets/images/contact_tests_views.png) |
 | Contact - URLS   |Pass     |![Contact - URLS](assets/images/contact_url.png) |
 | Contact - Views    |Pass     |![Contact - Views](assets/images/contact_view.png) |
 | Contact - Models    |Pass     |![Contact - Models](assets/images/contact_models.png) |

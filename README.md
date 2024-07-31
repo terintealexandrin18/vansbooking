@@ -452,7 +452,7 @@ The database model has been designed using dbdiagram. The type of database being
 
 - While checking the HTML code via URI, the website encountered four errors related to the Summernote Editor. However, these issues do not affect the project's functionality.
   
-  ![landing-page](assets/images/landpage.png)
+  ![landing-page](assets/images/index_html_check.png)
 
 ### Fixed Bugs
 
@@ -465,9 +465,9 @@ The database model has been designed using dbdiagram. The type of database being
 | Page           | Large Screen                                      | Small Screen                                     |
 |----------------|---------------------------------------------------|--------------------------------------------------|
 | Home Page      | ![landingpagelg](assets/images/landingpagelg.png) | ![landingpage-ss](assets/images/landingpagess.png) |
-| Make a Booking | ![makeabookingls](assets/images/vansbookingls.png) | ![makeabookingss](assets/images/vansbookingss.png) |
+| Make a Booking | ![makeabookingls](assets/images/make_a_booking_d.png) | ![makeabookingss](assets/images/make_a_booking_m.png)|
 | View my Booking| ![viewbookinglg](assets/images/viewbooklg.png)     | ![viewbookingss](assets/images/viewbookss.png)    |
-| Contact Us     | ![Contactls](assets/images/contactfinalls.png)     | ![Contactss](assets/images/contactfinalss.png)    |
+| Contact Us     | ![Contactls](assets/images/contact_d.png)          | ![Contactss](assets/images/contact_m.png)         |
 | Edit Booking   | ![editboockingls](assets/images/editfinallg.png)   | ![editboockingss](assets/images/editfinalss.png)  |
 | Delete Booking | ![deletels](assets/images/deletels.png)            | ![deletess](assets/images/deletess.png)           |
 | Sign Up        | ![signupls](assets/images/signupls.png)            | ![signupss](assets/images/signupss.png)           |
