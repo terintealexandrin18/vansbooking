@@ -35,6 +35,7 @@ Van's Transportation is a website designed for hassle-free bookings, allowing us
 7. [Finished Product](#finished-product)
 8. [Credit](#credit)
 9. [Acknowledgment](#acknowledgment)
+10. [Changes and Updates](#changes-and-updates)
 
 ## 1. User Experience (UX)
 
@@ -489,3 +490,14 @@ The database model has been designed using dbdiagram. The type of database being
 - Marcel has provided valuable tutoring, offering guidance, feedback, and support, while also addressing key points discussed during our meetings.
 - My wife for taking the time to check the website and providing me with valuable feedback. Her input was truly helpful.
 - Code Institute team for support and advice
+
+
+## Changes and Updates
+
+- Added validation for contact number: only 11-digit numbers are accepted for making a booking.
+- Implemented a calendar widget for booking dates to prevent selection of past dates, allowing only future dates to be selected.
+- Updated the contact form to validate that only 11-digit numbers are accepted, ensuring form submission only with valid contact numbers.
+- Added Agile Approach section detailing sprints and tasks.
+- Updated user stories with acceptance criteria.
+- Included Database Model section with schema documentation.
+- Enhanced documentation of sprints, milestones, and user acceptance criteria.
